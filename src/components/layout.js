@@ -4,13 +4,11 @@ import { Fragment } from "react";
 import PropTypes from "prop-types";
 
 import Footer from "../components/footer";
-import Header from "./header";
 import "./layout.css";
 
 const Layout = ({ children }) => {
   return (
     <Fragment>
-      <Header />
       <div
         sx={{
           margin: `0 auto`,
