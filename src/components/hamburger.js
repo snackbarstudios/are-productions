@@ -8,10 +8,15 @@ const Hamburger = ({ open, setOpen }) => {
     if (open) {
       switch (action) {
         case "rotateCW":
-          animation.transform = "rotate(-45deg) scaleX(2) scaleY(1.5)";
+          animation.transform = "rotate(-45deg) translate(-5px, 5px)";
+
+          // animation.transform = "rotate(-45deg) scaleX(2) scaleY(1.5)";
+          animation.backgroundColor = "background";
           break;
         case "rotateCCW":
-          animation.transform = "rotate(45deg) scaleY(1.5)";
+          animation.transform = "rotate(45deg) translate(-5px, -5px)";
+          // animation.transform = "rotate(45deg) scaleY(1.5)";
+          animation.backgroundColor = "background";
           break;
         case "fade":
           animation.backgroundColor = "transparent";
@@ -20,39 +25,52 @@ const Hamburger = ({ open, setOpen }) => {
       }
     }
     return {
-      marginLeft: "auto",
+      marginRight: "auto",
       display: "block",
-      height: "3px",
+      height: "2px",
       backgroundColor: "primary",
-      marginY: "3px",
+      marginY: "5px",
       borderRadius: "2px",
+      marginLeft: 2,
       ":first-of-type": {
-        width: "10px",
-        transformOrigin: "85% 50%"
+        width: "20px"
       },
       ":nth-of-type(2)": {
         width: "14px"
       },
       ":nth-of-type(3)": {
-        width: "20px",
-        transformOrigin: "100% 50%"
+        width: "20px"
       },
       transition: "ease-in-out 0.3s",
       ...animation
     };
   };
+
+  const hamburger = action => {
+    let animation = {};
+    if (open) {
+      switch (action) {
+        case "colorChange":
+          animation.backgroundColor = "primary";
+          break;
+        default:
+      }
+    }
+    return {
+      border: "none",
+      height: "50px",
+      width: " 50px",
+      borderRadius: "50%",
+      zIndex: 99,
+      position: "relative",
+      cursor: "pointer",
+      backgroundColor: "background",
+      transition: "ease-in-out 0.3s",
+      ...animation
+    };
+  };
   return (
-    <button
-      onClick={setOpen}
-      sx={{
-        marginLeft: "auto",
-        border: "none",
-        padding: 0,
-        zIndex: 4,
-        cursor: "pointer",
-        backgroundColor: "transparent"
-      }}
-    >
+    <button onClick={setOpen} sx={hamburger("colorChange")}>
       <span sx={burgerLine("rotateCW")} />
       <span sx={burgerLine("fade")} />
       <span sx={burgerLine("rotateCCW")} />
@@ -63,5 +81,6 @@ const Hamburger = ({ open, setOpen }) => {
 export default Hamburger;
 
 Hamburger.propTypes = {
-  open: PropTypes.bool.isRequired
+  open: PropTypes.bool.isRequired,
+  setOpen: PropTypes.func.isRequired
 };

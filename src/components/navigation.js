@@ -17,6 +17,7 @@ const Navigation = () => {
     `
   );
   const { navMenu } = datoCmsNavigation;
+
   return (
     <nav
       sx={{
@@ -29,7 +30,7 @@ const Navigation = () => {
         padding: 2
       }}
     >
-      <MobileNavigation />
+      <MobileNavigation navitems={navMenu} />
       <div sx={{ display: ["none", "block"], ml: "auto" }}>
         <Navmenu navitems={navMenu} />
       </div>
