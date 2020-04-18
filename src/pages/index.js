@@ -8,6 +8,7 @@ import "typeface-raleway";
 import "typeface-roboto";
 import Header from "../components/header";
 import AboutSection from "../components/aboutSection";
+import ContactSection from "../components/contactsection";
 
 const IndexPage = () => {
   return (
@@ -18,6 +19,7 @@ const IndexPage = () => {
         <SEO title="Home" />
 
         <AboutSection />
+        <ContactSection />
       </Layout>
     </Fragment>
   );
