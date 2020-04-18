@@ -9,6 +9,7 @@ import "typeface-roboto";
 import Header from "../components/header";
 import AboutSection from "../components/aboutSection";
 import ContactSection from "../components/contactsection";
+import Projects from "../components/projects";
 
 const IndexPage = () => {
   return (
@@ -17,9 +18,9 @@ const IndexPage = () => {
       <HeroImage />
       <Layout>
         <SEO title="Home" />
-
         <AboutSection />
         <ContactSection />
+        <Projects />
       </Layout>
     </Fragment>
   );
