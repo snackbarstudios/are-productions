@@ -35,7 +35,11 @@ const HeroImage = () => {
       backgroundColor={`#000`}
       sx={{
         minHeight: "100vh",
-        width: "100vw"
+        width: "100vw",
+        backgroundAttachment: "fixed",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover"
       }}
     ></BackgroundImage>
   );
