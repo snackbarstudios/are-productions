@@ -34,10 +34,10 @@ export default {
       fontWeight: "body"
     },
     h1: {
-      fontSize: 96,
+      fontSize: [36, null, 48],
       fontFamily: "heading",
       fontWeight: "heading",
-      color: "primary",
+      color: "text",
       mt: 4,
       mb: 2
     }
