@@ -32,6 +32,14 @@ export default {
       // uses the theme values provided above
       fontFamily: "body",
       fontWeight: "body"
+    },
+    h1: {
+      fontSize: 96,
+      fontFamily: "heading",
+      fontWeight: "heading",
+      color: "primary",
+      mt: 4,
+      mb: 2
     }
   }
 };
