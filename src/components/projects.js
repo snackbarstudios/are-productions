@@ -4,9 +4,13 @@ import { useStaticQuery, graphql } from "gatsby";
 import Lightbox from "./lightbox";
 
 const Projects = () => {
-  const { allDatoCmsProject } = useStaticQuery(
+  const { datoCmsVideoSection, allDatoCmsProject } = useStaticQuery(
     graphql`
       query {
+        datoCmsVideoSection {
+          slug
+          sectionTitle
+        }
         allDatoCmsProject {
           edges {
             node {
@@ -27,7 +31,10 @@ const Projects = () => {
     `
   );
   return (
-    <section>
+    <section id={datoCmsVideoSection.slug}>
+      <h2 sx={{ textAlign: "center", textTransform: "uppercase" }}>
+        {datoCmsVideoSection.sectionTitle}
+      </h2>
       {allDatoCmsProject.edges.map(video => (
         <div key={video.node.id} sx={{ display: "flex" }}>
           <article sx={{ width: "10%", position: "relative" }}>
@@ -36,8 +43,8 @@ const Projects = () => {
                 ":before, :after": {
                   content: '" "',
                   display: "block",
-                  borderBottom: "1px solid red",
-                  borderTop: "1px solid red",
+                  borderBottom: "1px solid #810904",
+                  borderTop: "1px solid #810904",
                   margin: "0 20px 0 0",
                   flex: "1 0 20px"
                 },
