@@ -7,7 +7,7 @@ const AboutSection = () => {
     graphql`
       query {
         datoCmsAboutSection {
-          title
+          slug
           sectionTitle
           text {
             paragraphText
@@ -17,11 +17,11 @@ const AboutSection = () => {
     `
   );
 
-  const { title, text, sectionTitle } = datoCmsAboutSection;
+  const { slug, text, sectionTitle } = datoCmsAboutSection;
 
   return (
     <section
-      id={title}
+      id={slug}
       sx={{
         my: [3, 5, null],
         display: "flex",

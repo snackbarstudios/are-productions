@@ -9,6 +9,7 @@ const ContactSection = () => {
       query {
         datoCmsContactSection {
           title
+          slug
           text
           companyEmail
           contactDetails {
@@ -26,11 +27,17 @@ const ContactSection = () => {
     `
   );
 
-  const { title, text, companyEmail, contactDetails } = datoCmsContactSection;
+  const {
+    slug,
+    title,
+    text,
+    companyEmail,
+    contactDetails
+  } = datoCmsContactSection;
 
   return (
     <section
-      id="ciao-for-now"
+      id={slug}
       sx={{
         mt: [6, null, null],
         mb: [4, null, null],
