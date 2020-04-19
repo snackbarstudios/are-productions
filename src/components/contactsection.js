@@ -40,33 +40,39 @@ const ContactSection = () => {
       id={slug}
       sx={{
         mt: [6, null, null],
-        mb: [4, null, null],
         textAlign: "center",
         width: "100%"
       }}
     >
       <p>{text}</p>
-      <Styled.h1>{title}</Styled.h1>
+      <Styled.h1
+        sx={{
+          mb: 0
+        }}
+      >
+        {title}
+      </Styled.h1>
       <div
         sx={{
-          my: [4, 6, null],
+          // my: [4, 6, null],
           height: "auto",
           display: "flex",
           width: "100%",
           flexDirection: ["column", "row", null],
-          justifyContent: "center"
+          justifyContent: "center",
+          alignItems: "center"
         }}
       >
         {contactDetails.map(({ name, email, phone, image }, index) => {
           return (
-            <div key={index} sx={{ mx: [null, 4, null], width: "300px" }}>
+            <div key={index} sx={{ width: "300px", mt: 5 }}>
               <div
                 sx={{
                   width: "220px",
                   height: "220px",
                   borderRadius: "50%",
                   overflow: "hidden",
-                  mb: [4, null, null],
+                  mb: 4,
                   margin: "0 auto"
                 }}
               >
@@ -119,6 +125,7 @@ const ContactSection = () => {
       </div>
       <a
         sx={{
+          mt: 6,
           color: "primary",
           fontWeight: "bold",
           textDecoration: "none",

@@ -32,7 +32,7 @@ const Footer = () => {
           rel="noreferrer noopener"
           sx={{
             margin: 2,
-            my: 5
+            my: 4
           }}
         >
           <FacebookIcon />
@@ -43,7 +43,7 @@ const Footer = () => {
           rel="noreferrer noopener"
           sx={{
             margin: 2,
-            my: 5
+            my: 4
           }}
         >
           <InstagramIcon />
