@@ -38,6 +38,7 @@ export default {
       fontFamily: "heading",
       fontWeight: "heading",
       color: "text",
+      textTransform: "uppercase",
       mt: 4,
       mb: 2
     }

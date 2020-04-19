@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui";
 import { useStaticQuery, graphql } from "gatsby";
-import PropTypes from "prop-types";
 
 const AboutSection = () => {
   const { datoCmsAboutSection } = useStaticQuery(
@@ -51,8 +50,3 @@ const AboutSection = () => {
 };
 
 export default AboutSection;
-
-AboutSection.propTypes = {
-  title: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired
-};

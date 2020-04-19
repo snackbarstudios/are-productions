@@ -19,8 +19,8 @@ const IndexPage = () => {
       <Layout>
         <SEO title="Home" />
         <AboutSection />
-        <ContactSection />
         <Projects />
+        <ContactSection />
       </Layout>
     </Fragment>
   );
