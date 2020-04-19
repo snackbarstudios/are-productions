@@ -1,8 +1,14 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import PropTypes from "prop-types";
+import { useContext } from "react";
+import AnchorLink from "./anchorLink";
 
-const NavItem = ({ children, open }) => {
+import { ToggleContext } from "./toggleContext";
+
+const NavItem = ({ children }) => {
+  const { open } = useContext(ToggleContext);
+
   const item = action => {
     let animation = {};
     if (open) {
@@ -25,7 +31,11 @@ const NavItem = ({ children, open }) => {
       ...animation
     };
   };
-  return <li sx={item("colorChange")}>{children}</li>;
+  return (
+    <li sx={item("colorChange")}>
+      <AnchorLink>{children}</AnchorLink>
+    </li>
+  );
 };
 
 export default NavItem;

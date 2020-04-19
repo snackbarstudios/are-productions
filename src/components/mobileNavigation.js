@@ -5,20 +5,18 @@ import Hamburger from "./hamburger";
 import DropDown from "./dropDown";
 import NavMenuMobile from "./navmenumobile";
 import PropTypes from "prop-types";
-
-function toggle(setState, state) {
-  setState(!state);
-}
+import { ToggleContextProvider } from "./toggleContext";
 
 const MobileNavigation = ({ navitems }) => {
-  const [open, setOpen] = useState(false);
   return (
-    <div sx={{ display: ["block", null, "none"] }}>
-      <Hamburger setOpen={() => toggle(setOpen, open)} open={open} />
-      <DropDown open={open}>
-        <NavMenuMobile navitems={navitems} open={open} />
-      </DropDown>
-    </div>
+    <ToggleContextProvider>
+      <div sx={{ display: ["block", null, "none"] }}>
+        <Hamburger />
+        <DropDown>
+          <NavMenuMobile navitems={navitems} />
+        </DropDown>
+      </div>
+    </ToggleContextProvider>
   );
 };
 

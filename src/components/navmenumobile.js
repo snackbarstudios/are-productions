@@ -3,7 +3,7 @@ import { jsx } from "theme-ui";
 import PropTypes from "prop-types";
 import NavItem from "./navitem";
 
-const NavMenuMobile = ({ navitems, open }) => {
+const NavMenuMobile = ({ navitems }) => {
   return (
     <ul
       sx={{
@@ -15,10 +15,8 @@ const NavMenuMobile = ({ navitems, open }) => {
         li: { margin: 4 }
       }}
     >
-      {navitems.map((link, index) => (
-        <NavItem key={index} open={open}>
-          {link.linkName}
-        </NavItem>
+      {navitems.map(link => (
+        <NavItem key={link.id}>{link.linkName}</NavItem>
       ))}
     </ul>
   );

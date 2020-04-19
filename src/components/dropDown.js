@@ -1,8 +1,13 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import PropTypes from "prop-types";
+import { useContext } from "react";
 
-const DropDown = ({ open, setOpen, children }) => {
+import { ToggleContext } from "./toggleContext";
+
+const DropDown = ({ children }) => {
+  const { open } = useContext(ToggleContext);
+
   const slide = action => {
     let animation = {};
     if (open) {

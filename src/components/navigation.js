@@ -3,6 +3,8 @@ import { jsx } from "theme-ui";
 import { useStaticQuery, graphql } from "gatsby";
 import NavMenuDesktop from "./navMenuDesktop";
 import MobileNavigation from "./mobileNavigation";
+import { useState } from "react";
+import useDocumentScrollThrottled from "../hooks/useDocumentScrollThrottled";
 
 const Navigation = () => {
   const { datoCmsNavigation } = useStaticQuery(
@@ -10,13 +12,42 @@ const Navigation = () => {
       query {
         datoCmsNavigation {
           navMenu {
+            id
             linkName
+            link {
+              ... on DatoCmsAboutSection {
+                id
+                slug
+              }
+              ... on DatoCmsVideoSection {
+                id
+                slug
+              }
+              ... on DatoCmsContactSection {
+                id
+                slug
+              }
+            }
           }
         }
       }
     `
   );
+
   const { navMenu } = datoCmsNavigation;
+  const [showBackground, setBackground] = useState(false);
+  const MINIMUM_SCROLL = 300;
+  const TIMEOUT_DELAY = 200;
+
+  useDocumentScrollThrottled(callbackData => {
+    const { currentScrollTop } = callbackData;
+    const isMinimumScrolled = currentScrollTop > MINIMUM_SCROLL;
+
+    // adds a bit of delay effect to the header’s hide/show movement after scrolling
+    setTimeout(() => {
+      setBackground(isMinimumScrolled);
+    }, TIMEOUT_DELAY);
+  });
 
   return (
     <nav
@@ -27,7 +58,10 @@ const Navigation = () => {
         boxSizing: "border-box",
         display: "flex",
         alignItems: "center",
-        padding: 2
+        padding: 2,
+        backgroundColor: showBackground
+          ? ["transparent", null, "background"]
+          : ["transparent"]
       }}
     >
       <MobileNavigation navitems={navMenu} />
