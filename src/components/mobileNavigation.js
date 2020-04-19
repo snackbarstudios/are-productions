@@ -3,7 +3,7 @@ import { jsx } from "theme-ui";
 import { useState } from "react";
 import Hamburger from "./hamburger";
 import DropDown from "./dropDown";
-import Navmenu from "./navmenu";
+import NavMenuMobile from "./navmenumobile";
 import PropTypes from "prop-types";
 
 function toggle(setState, state) {
@@ -16,7 +16,7 @@ const MobileNavigation = ({ navitems }) => {
     <div sx={{ display: ["block", null, "none"] }}>
       <Hamburger setOpen={() => toggle(setOpen, open)} open={open} />
       <DropDown open={open}>
-        <Navmenu navitems={navitems} open={open} />
+        <NavMenuMobile navitems={navitems} open={open} />
       </DropDown>
     </div>
   );

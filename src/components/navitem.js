@@ -17,7 +17,7 @@ const NavItem = ({ children, open }) => {
     return {
       color: "primary",
       fontFamily: "heading",
-      fontWeight: "heading",
+      fontWeight: "body",
       transition: "all 1s ease-in",
       transitionProperty: "opacity, transform",
       transform: " translateY(-100px)",
