@@ -616,3 +616,19 @@ pre tt:after {
     font-size: 100%;
   }
 }
+
+
+
+.st0{
+fill:none;
+stroke:#9F151D;
+stroke-width:2;
+stroke-miterlimit:10;
+}
+.st1{
+  fill:#FFFFFF;
+  stroke:#9F151D;
+  stroke-width:2;
+  stroke-miterlimit:10;
+}
+

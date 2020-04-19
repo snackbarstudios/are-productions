@@ -13,7 +13,7 @@ function toggle(setState, state) {
 const MobileNavigation = ({ navitems }) => {
   const [open, setOpen] = useState(false);
   return (
-    <div sx={{ display: ["block", "none"] }}>
+    <div sx={{ display: ["block", null, "none"] }}>
       <Hamburger setOpen={() => toggle(setOpen, open)} open={open} />
       <DropDown open={open}>
         <Navmenu navitems={navitems} open={open} />

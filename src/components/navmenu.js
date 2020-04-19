@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import PropTypes from "prop-types";
-import NavItem from "./navitem";
 
 const Navmenu = ({ navitems, open }) => {
   return (
@@ -16,9 +15,17 @@ const Navmenu = ({ navitems, open }) => {
       }}
     >
       {navitems.map((link, index) => (
-        <NavItem key={index} open={open}>
+        <li
+          sx={{
+            color: "primary",
+            fontFamily: "heading",
+            fontWeight: "body"
+          }}
+          key={index}
+          open={open}
+        >
           {link.linkName}
-        </NavItem>
+        </li>
       ))}
     </ul>
   );

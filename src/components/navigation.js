@@ -31,7 +31,12 @@ const Navigation = () => {
       }}
     >
       <MobileNavigation navitems={navMenu} />
-      <div sx={{ display: ["none", "block"], ml: "auto" }}>
+      <div
+        sx={{
+          display: ["none", null, "block"],
+          ml: "auto"
+        }}
+      >
         <Navmenu navitems={navMenu} />
       </div>
     </nav>
