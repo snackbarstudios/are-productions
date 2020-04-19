@@ -2,7 +2,7 @@ export default {
   colors: {
     text: "#fff",
     background: "#000",
-    primary: "#9f151d",
+    primary: "#810904",
     highlight: "B6110B"
   },
   breakpoints: ["40em", "56em", "64em"],

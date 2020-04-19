@@ -1,14 +1,20 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import PropTypes from "prop-types";
+import { useContext } from "react";
 
-const DropDown = ({ open, setOpen, children }) => {
+import { ToggleContext } from "./toggleContext";
+
+const DropDown = ({ children }) => {
+  const { open } = useContext(ToggleContext);
+
   const slide = action => {
     let animation = {};
     if (open) {
       switch (action) {
         case "dropdown":
           animation.visibility = "visible";
+          animation.height = "100vh";
           animation.backgroundColor = "background";
 
           break;
@@ -19,7 +25,7 @@ const DropDown = ({ open, setOpen, children }) => {
       backgroundColor: "background",
       display: "flex",
       flexDirection: "column",
-      height: "100vh",
+      height: "0",
       position: "absolute",
       left: 0,
       top: 0,
@@ -27,7 +33,7 @@ const DropDown = ({ open, setOpen, children }) => {
       width: "100%",
       visibility: "hidden",
       justifyContent: "center",
-      transition: "ease-in-out 0.3s",
+      transition: "all 1s ease-out ",
       ...animation
     };
   };
@@ -38,6 +44,5 @@ const DropDown = ({ open, setOpen, children }) => {
 export default DropDown;
 
 DropDown.propTypes = {
-  open: PropTypes.bool.isRequired,
   children: PropTypes.node.isRequired
 };

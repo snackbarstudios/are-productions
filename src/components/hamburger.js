@@ -1,8 +1,12 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import PropTypes from "prop-types";
+import { useContext } from "react";
 
-const Hamburger = ({ open, setOpen }) => {
+import { ToggleContext } from "./toggleContext";
+
+const Hamburger = () => {
+  const { open, toggleNavigation } = useContext(ToggleContext);
+
   const burgerLine = action => {
     let animation = {};
     if (open) {
@@ -27,8 +31,8 @@ const Hamburger = ({ open, setOpen }) => {
     return {
       marginRight: "auto",
       display: "block",
-      height: "2px",
-      backgroundColor: "primary",
+      height: "3px",
+      backgroundColor: "#9f151d",
       marginY: "5px",
       borderRadius: "2px",
       marginLeft: 2,
@@ -70,7 +74,7 @@ const Hamburger = ({ open, setOpen }) => {
     };
   };
   return (
-    <button onClick={setOpen} sx={hamburger("colorChange")}>
+    <button onClick={toggleNavigation} sx={hamburger("colorChange")}>
       <span sx={burgerLine("rotateCW")} />
       <span sx={burgerLine("fade")} />
       <span sx={burgerLine("rotateCCW")} />
@@ -79,8 +83,3 @@ const Hamburger = ({ open, setOpen }) => {
 };
 
 export default Hamburger;
-
-Hamburger.propTypes = {
-  open: PropTypes.bool.isRequired,
-  setOpen: PropTypes.func.isRequired
-};
