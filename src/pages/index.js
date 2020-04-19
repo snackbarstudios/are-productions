@@ -19,7 +19,7 @@ const IndexPage = () => {
       <Layout>
         <SEO title="Home" />
         <AboutSection />
-        <Projects />
+        {/* <Projects /> */}
         <ContactSection />
       </Layout>
     </Fragment>

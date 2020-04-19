@@ -8,6 +8,7 @@ const AboutSection = () => {
       query {
         datoCmsAboutSection {
           title
+          sectionTitle
           text {
             paragraphText
           }
@@ -16,10 +17,11 @@ const AboutSection = () => {
     `
   );
 
-  const { title, text } = datoCmsAboutSection;
+  const { title, text, sectionTitle } = datoCmsAboutSection;
 
   return (
     <section
+      id={title}
       sx={{
         my: [3, 5, null],
         display: "flex",
@@ -33,7 +35,7 @@ const AboutSection = () => {
           wordSpacing: "100vw"
         }}
       >
-        {title}
+        {sectionTitle}
       </Styled.h1>
       <div
         sx={{

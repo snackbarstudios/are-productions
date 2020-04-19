@@ -30,8 +30,10 @@ const ContactSection = () => {
 
   return (
     <section
+      id="ciao-for-now"
       sx={{
-        my: [6, null, null],
+        mt: [6, null, null],
+        mb: [4, null, null],
         textAlign: "center",
         width: "100%"
       }}
@@ -67,8 +69,8 @@ const ContactSection = () => {
                 sx={{
                   border: "0",
                   height: "1px",
-                  color: "#9f151d",
-                  backgroundColor: "#9f151d",
+                  color: "primary",
+                  backgroundColor: "primary",
                   mt: 5,
                   mx: "60px",
                   width: "180px"
@@ -84,7 +86,7 @@ const ContactSection = () => {
               </p>
               <a
                 sx={{
-                  color: "#9f151d",
+                  color: "primary",
                   fontWeight: "bold",
                   textDecoration: "none",
                   display: "block"
@@ -110,7 +112,7 @@ const ContactSection = () => {
       </div>
       <a
         sx={{
-          color: "#9f151d",
+          color: "primary",
           fontWeight: "bold",
           textDecoration: "none",
           display: "block"
