@@ -1,14 +1,14 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui";
 import { useStaticQuery, graphql } from "gatsby";
-import PropTypes from "prop-types";
 
 const AboutSection = () => {
   const { datoCmsAboutSection } = useStaticQuery(
     graphql`
       query {
         datoCmsAboutSection {
-          title
+          slug
+          sectionTitle
           text {
             paragraphText
           }
@@ -17,10 +17,11 @@ const AboutSection = () => {
     `
   );
 
-  const { title, text } = datoCmsAboutSection;
+  const { slug, text, sectionTitle } = datoCmsAboutSection;
 
   return (
     <section
+      id={slug}
       sx={{
         my: [3, 5, null],
         display: "flex",
@@ -34,7 +35,7 @@ const AboutSection = () => {
           wordSpacing: "100vw"
         }}
       >
-        {title}
+        {sectionTitle}
       </Styled.h1>
       <div
         sx={{
@@ -51,8 +52,3 @@ const AboutSection = () => {
 };
 
 export default AboutSection;
-
-AboutSection.propTypes = {
-  title: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired
-};
