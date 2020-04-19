@@ -2,6 +2,7 @@
 import { jsx } from "theme-ui";
 import { useStaticQuery, graphql } from "gatsby";
 import BackgroundImage from "gatsby-background-image";
+import SVG from "../components/svg";
 
 const HeroImage = () => {
   const { allDatoCmsHeroBanner } = useStaticQuery(
@@ -35,13 +36,27 @@ const HeroImage = () => {
       backgroundColor={`#000`}
       sx={{
         minHeight: "100vh",
-        width: "100vw",
+        width: "100%",
         backgroundAttachment: "fixed",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        backgroundSize: "cover"
+        backgroundSize: "cover",
+        position: "relative",
+        overflow: "hidden"
       }}
-    ></BackgroundImage>
+    >
+      <div
+        sx={{
+          position: "absolute",
+          textAlign: "center",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)"
+        }}
+      >
+        <SVG />
+      </div>
+    </BackgroundImage>
   );
 };
 

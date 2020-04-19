@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { useStaticQuery, graphql } from "gatsby";
-import Navmenu from "./navmenu";
+import NavMenuDesktop from "./navMenuDesktop";
 import MobileNavigation from "./mobileNavigation";
 
 const Navigation = () => {
@@ -31,8 +31,13 @@ const Navigation = () => {
       }}
     >
       <MobileNavigation navitems={navMenu} />
-      <div sx={{ display: ["none", "block"], ml: "auto" }}>
-        <Navmenu navitems={navMenu} />
+      <div
+        sx={{
+          display: ["none", null, "block"],
+          ml: "auto"
+        }}
+      >
+        <NavMenuDesktop navitems={navMenu} />
       </div>
     </nav>
   );

@@ -3,14 +3,14 @@ import { jsx } from "theme-ui";
 import PropTypes from "prop-types";
 import NavItem from "./navitem";
 
-const Navmenu = ({ navitems, open }) => {
+const NavMenuMobile = ({ navitems, open }) => {
   return (
     <ul
       sx={{
         listStyle: "none",
         display: "flex",
-        flexDirection: ["column", null, "row"],
-        fontSize: [7, null, 3],
+        flexDirection: "column",
+        fontSize: 7,
         m: 0,
         li: { margin: 4 }
       }}
@@ -24,8 +24,8 @@ const Navmenu = ({ navitems, open }) => {
   );
 };
 
-export default Navmenu;
+export default NavMenuMobile;
 
-Navmenu.propTypes = {
+NavMenuMobile.propTypes = {
   navitems: PropTypes.array.isRequired
 };
