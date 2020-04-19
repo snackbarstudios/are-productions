@@ -14,6 +14,7 @@ const DropDown = ({ children }) => {
       switch (action) {
         case "dropdown":
           animation.visibility = "visible";
+          animation.height = "100vh";
           animation.backgroundColor = "background";
 
           break;
@@ -24,7 +25,7 @@ const DropDown = ({ children }) => {
       backgroundColor: "background",
       display: "flex",
       flexDirection: "column",
-      height: "100vh",
+      height: "0",
       position: "absolute",
       left: 0,
       top: 0,
@@ -32,7 +33,7 @@ const DropDown = ({ children }) => {
       width: "100%",
       visibility: "hidden",
       justifyContent: "center",
-      transition: "ease-in-out 0.3s",
+      transition: "all 1s ease-out ",
       ...animation
     };
   };
@@ -43,6 +44,5 @@ const DropDown = ({ children }) => {
 export default DropDown;
 
 DropDown.propTypes = {
-  open: PropTypes.bool.isRequired,
   children: PropTypes.node.isRequired
 };

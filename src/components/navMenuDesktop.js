@@ -5,14 +5,23 @@ import PropTypes from "prop-types";
 import AnchorLink from "./anchorLink";
 
 const NavMenuDesktop = ({ navitems }) => {
-  console.log(navitems);
   const [anchorBold, setAnchorBold] = useState(null);
+  // let options = {};
+  let observer;
 
-  let options = {
-    root: document.querySelector(null),
-    rootMargin: "0px",
-    threshold: 0.3
-  };
+  const [options, setOptions] = useState();
+
+  useEffect(() => {
+    if (typeof document !== `undefined`) {
+      setOptions({
+        root: document.body.querySelector(null),
+        rootMargin: "0px",
+        threshold: 0.3
+      });
+
+      observer = new IntersectionObserver(callback, options);
+    }
+  }, []);
 
   const callback = entries => {
     let anchorId;
@@ -30,13 +39,11 @@ const NavMenuDesktop = ({ navitems }) => {
     }
   };
 
-  let observer = new IntersectionObserver(callback, options);
-
   useEffect(() => {
     if (navitems.length) {
       navitems.forEach(({ link }) => {
         const target = document.querySelector(`#${link.slug}`);
-        if (target) {
+        if (target && typeof observer !== `undefined`) {
           observer.observe(target);
         }
       });
@@ -63,7 +70,12 @@ const NavMenuDesktop = ({ navitems }) => {
     >
       {navitems.map(link => (
         <li key={link.id}>
-          <AnchorLink href={`#${link.slug}`}>{link.linkName}</AnchorLink>
+          <AnchorLink
+            href={`#${link.link.slug}`}
+            isBold={anchorBold === link.link.slug}
+          >
+            {link.linkName}
+          </AnchorLink>
         </li>
       ))}
     </ul>

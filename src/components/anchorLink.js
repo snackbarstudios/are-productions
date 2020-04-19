@@ -5,7 +5,7 @@ import { useContext } from "react";
 
 import { ToggleContext } from "./toggleContext";
 
-const AnchorLink = ({ children, href, handleClick, isBold }) => {
+const AnchorLink = ({ children, href, isBold }) => {
   const { closeNavigation } = useContext(ToggleContext);
   return (
     <a
@@ -15,11 +15,11 @@ const AnchorLink = ({ children, href, handleClick, isBold }) => {
       sx={{
         fontWeight: isBold ? "heading" : "body",
         textDecoration: "none",
+        color: "primary",
         ":hover": {
           fontWeight: "heading"
         },
-        ":focus": { fontWeight: "heading" },
-        ":active": { fontWeight: "heading" }
+        ":focus": { fontWeight: "heading" }
       }}
     >
       {children}
@@ -32,7 +32,6 @@ AnchorLink.defaultProps = {
 
 AnchorLink.propTypes = {
   children: PropTypes.node.isRequired,
-  handleClick: PropTypes.func.isRequired,
   href: PropTypes.string.isRequired,
   isBold: PropTypes.bool
 };
