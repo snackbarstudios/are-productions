@@ -11,7 +11,6 @@ function toggle(setState, state) {
 }
 
 const MobileNavigation = ({ navitems }) => {
-  console.log(navitems);
   const [open, setOpen] = useState(false);
   return (
     <div sx={{ display: ["block", "none"] }}>
