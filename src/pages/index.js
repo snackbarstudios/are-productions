@@ -10,19 +10,22 @@ import Header from "../components/header";
 import AboutSection from "../components/aboutSection";
 import ContactSection from "../components/contactsection";
 import Projects from "../components/projects";
+import SimpleReactLightbox from "simple-react-lightbox";
 
 const IndexPage = () => {
   return (
-    <Fragment>
-      <Header />
-      <HeroImage />
-      <Layout>
-        <SEO title="Home" />
-        <AboutSection />
-        {/* <Projects /> */}
-        <ContactSection />
-      </Layout>
-    </Fragment>
+    <SimpleReactLightbox>
+      <Fragment>
+        <Header />
+        <HeroImage />
+        <Layout>
+          <SEO title="Home" />
+          <AboutSection />
+          <Projects />
+          <ContactSection />
+        </Layout>
+      </Fragment>
+    </SimpleReactLightbox>
   );
 };
 
