@@ -61,13 +61,27 @@ const HeroImage = () => {
     <div
       sx={{
         backgroundImage: `url(${fluid.src})`,
-        height: "100vh",
-        backgroundPosition: "center",
+        minHeight: "100vh",
+        width: "100%",
+        backgroundAttachment: "fixed",
+        backgroundPosition: "right bottom",
         backgroundRepeat: "no-repeat",
-        backgroundSize: "cover"
+        backgroundSize: "cover",
+        position: "relative",
+        overflow: "hidden"
       }}
     >
-      <SVG />
+      <div
+        sx={{
+          position: "absolute",
+          textAlign: "center",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)"
+        }}
+      >
+        <SVG />
+      </div>
     </div>
   );
 };
