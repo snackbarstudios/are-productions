@@ -38,7 +38,7 @@ const HeroImage = () => {
         minHeight: "100vh",
         width: "100%",
         backgroundAttachment: "fixed",
-        backgroundPosition: "center",
+        backgroundPosition: "right bottom",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         position: "relative",
