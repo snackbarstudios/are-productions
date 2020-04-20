@@ -26,7 +26,6 @@ const Hamburger = () => {
       }
     }
     return {
-      marginRight: "auto",
       display: "block",
       height: "3px",
       backgroundColor: "#9f151d",
