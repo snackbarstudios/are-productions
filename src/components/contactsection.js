@@ -39,7 +39,7 @@ const ContactSection = () => {
     <section
       id={slug}
       sx={{
-        mt: [6, null, null],
+        my: [3, 5, null],
         textAlign: "center",
         width: "100%"
       }}
@@ -54,7 +54,6 @@ const ContactSection = () => {
       </Styled.h2>
       <div
         sx={{
-          // my: [4, 6, null],
           height: "auto",
           display: "flex",
           width: "100%",
@@ -68,8 +67,8 @@ const ContactSection = () => {
             <div key={index} sx={{ width: "300px", mt: 5 }}>
               <div
                 sx={{
-                  width: "220px",
-                  height: "220px",
+                  width: ["160px", "200px", null],
+                  height: ["160px", "200px", null],
                   borderRadius: "50%",
                   overflow: "hidden",
                   mb: 4,
@@ -84,7 +83,7 @@ const ContactSection = () => {
                   height: "1px",
                   color: "primary",
                   backgroundColor: "primary",
-                  mt: 5,
+                  mt: [4, 5, null],
                   mx: "60px",
                   width: "180px"
                 }}

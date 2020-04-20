@@ -31,7 +31,12 @@ const Projects = () => {
     `
   );
   return (
-    <section id={datoCmsVideoSection.slug}>
+    <section
+      id={datoCmsVideoSection.slug}
+      sx={{
+        my: [3, 5, null]
+      }}
+    >
       <Styled.h2 sx={{ textAlign: "center", textTransform: "uppercase" }}>
         {datoCmsVideoSection.sectionTitle}
       </Styled.h2>
