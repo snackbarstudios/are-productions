@@ -23,7 +23,7 @@ const NavItem = ({ children, href }) => {
       color: "primary",
       fontFamily: "heading",
       fontWeight: "body",
-      transition: "all 0.3s ease-in-out",
+      transition: "all 0.3s ease-out",
       transitionDelay: "0.1s",
       transitionProperty: "opacity, transform",
       transform: " translateY(-20px)",
