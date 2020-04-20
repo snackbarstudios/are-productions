@@ -2,7 +2,6 @@
 import PropTypes from "prop-types";
 import { jsx } from "theme-ui";
 import { useContext } from "react";
-
 import { ToggleContext } from "./toggleContext";
 
 const AnchorLink = ({ children, href, isBold }) => {

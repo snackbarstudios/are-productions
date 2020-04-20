@@ -16,7 +16,9 @@ const NavMenuMobile = ({ navitems }) => {
       }}
     >
       {navitems.map(link => (
-        <NavItem key={link.id}>{link.linkName}</NavItem>
+        <NavItem key={link.id} href={link.link.slug}>
+          {link.linkName}
+        </NavItem>
       ))}
     </ul>
   );

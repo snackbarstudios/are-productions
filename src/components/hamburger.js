@@ -12,13 +12,13 @@ const Hamburger = () => {
     if (open) {
       switch (action) {
         case "rotateCW":
-          animation.transform = "rotate(-45deg) translate(-5px, 5px)";
+          animation.transform = "rotate(-45deg) translate(-6px, 6px)";
 
           // animation.transform = "rotate(-45deg) scaleX(2) scaleY(1.5)";
           animation.backgroundColor = "background";
           break;
         case "rotateCCW":
-          animation.transform = "rotate(45deg) translate(-5px, -5px)";
+          animation.transform = "rotate(45deg) translate(-5px, -6px)";
           // animation.transform = "rotate(45deg) scaleY(1.5)";
           animation.backgroundColor = "background";
           break;

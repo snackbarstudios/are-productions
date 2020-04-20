@@ -33,7 +33,7 @@ const DropDown = ({ children }) => {
       width: "100%",
       visibility: "hidden",
       justifyContent: "center",
-      transition: "all 1s ease-out ",
+      transition: "all 0.6s ease-out ",
       ...animation
     };
   };

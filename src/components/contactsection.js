@@ -45,13 +45,13 @@ const ContactSection = () => {
       }}
     >
       <p>{text}</p>
-      <Styled.h1
+      <Styled.h2
         sx={{
           mb: 0
         }}
       >
         {title}
-      </Styled.h1>
+      </Styled.h2>
       <div
         sx={{
           // my: [4, 6, null],

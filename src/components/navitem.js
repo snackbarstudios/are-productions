@@ -3,10 +3,9 @@ import { jsx } from "theme-ui";
 import PropTypes from "prop-types";
 import { useContext } from "react";
 import AnchorLink from "./anchorLink";
-
 import { ToggleContext } from "./toggleContext";
 
-const NavItem = ({ children }) => {
+const NavItem = ({ children, href }) => {
   const { open } = useContext(ToggleContext);
 
   const item = action => {
@@ -24,7 +23,8 @@ const NavItem = ({ children }) => {
       color: "primary",
       fontFamily: "heading",
       fontWeight: "body",
-      transition: "all 0.5s ease-out",
+      transition: "all 0.3s ease-in-out",
+      transitionDelay: "0.1s",
       transitionProperty: "opacity, transform",
       transform: " translateY(-20px)",
       opacity: 0,
@@ -33,7 +33,7 @@ const NavItem = ({ children }) => {
   };
   return (
     <li sx={item("colorChange")}>
-      <AnchorLink>{children}</AnchorLink>
+      <AnchorLink href={`#${href}`}>{children}</AnchorLink>
     </li>
   );
 };
@@ -41,5 +41,6 @@ const NavItem = ({ children }) => {
 export default NavItem;
 
 NavItem.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  href: PropTypes.string.isRequired
 };

@@ -6,7 +6,6 @@ import AnchorLink from "./anchorLink";
 
 const NavMenuDesktop = ({ navitems }) => {
   const [anchorBold, setAnchorBold] = useState(null);
-  // let options = {};
   let observer;
 
   const [options, setOptions] = useState();

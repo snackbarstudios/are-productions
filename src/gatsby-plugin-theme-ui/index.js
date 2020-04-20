@@ -41,6 +41,15 @@ export default {
       textTransform: "uppercase",
       mt: 4,
       mb: 2
+    },
+    h2: {
+      fontSize: [36, null, 48],
+      fontFamily: "heading",
+      fontWeight: "heading",
+      color: "text",
+      textTransform: "uppercase",
+      mt: 4,
+      mb: 2
     }
   }
 };
