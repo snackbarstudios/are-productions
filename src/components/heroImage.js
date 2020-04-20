@@ -28,35 +28,47 @@ const HeroImage = () => {
       heroImage: { fluid }
     }
   } = allDatoCmsHeroBanner.edges[0];
+  console.log(fluid);
 
   return (
-    <BackgroundImage
-      Tag="section"
-      fluid={fluid}
-      backgroundColor={`#000`}
+    // <BackgroundImage
+    //   Tag="section"
+    //   fluid={fluid}
+    //   backgroundColor={`#000`}
+    //   sx={{
+    //     minHeight: "100vh",
+    //     width: "100%",
+    //     backgroundAttachment: "fixed",
+    //     backgroundPosition: "right bottom",
+    //     backgroundRepeat: "no-repeat",
+    //     backgroundSize: "cover",
+    //     position: "relative",
+    //     overflow: "hidden"
+    //   }}
+    // >
+    //   <div
+    //     sx={{
+    //       position: "absolute",
+    //       textAlign: "center",
+    //       top: "50%",
+    //       left: "50%",
+    //       transform: "translate(-50%, -50%)"
+    //     }}
+    //   >
+    //     <SVG />
+    //   </div>
+    // </BackgroundImage>
+    <div
       sx={{
-        minHeight: "100vh",
-        width: "100%",
-        backgroundAttachment: "fixed",
-        backgroundPosition: "right bottom",
+        backgroundImage: `url(${fluid.src})`,
+        height: "100vh",
+        backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        position: "relative",
-        overflow: "hidden"
+        backgroundSize: "cover"
       }}
     >
-      <div
-        sx={{
-          position: "absolute",
-          textAlign: "center",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)"
-        }}
-      >
-        <SVG />
-      </div>
-    </BackgroundImage>
+      <SVG />
+    </div>
   );
 };
 
