@@ -10,7 +10,7 @@ const Lightbox = ({ video }) => {
   return (
     <Fragment>
       <div sx={{ flex: "1", position: "relative" }}>
-        <VideoOverlay />
+        <VideoOverlay onClick={() => setToggler(!toggler)} />
         <Img
           Tag="section"
           key={video.id}

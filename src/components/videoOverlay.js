@@ -1,10 +1,13 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import PlayIcon from "../assets/images/play-circle.svg";
+import PropTypes from "prop-types";
 
-const VideoOverlay = () => {
+
+const VideoOverlay = ({ onClick }) => {
   return (
     <div
+      onClick={onClick}
       sx={{
         position: "absolute",
         img: {
@@ -35,3 +38,7 @@ const VideoOverlay = () => {
 };
 
 export default VideoOverlay;
+
+VideoOverlay.propTypes = {
+  onClick: PropTypes.func.isRequired
+};
