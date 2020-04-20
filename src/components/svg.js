@@ -30,7 +30,7 @@ const SVG = () => {
       viewBox="0 0 425.2 141.7"
       xmlSpace="preserve"
       sx={{
-        height: ["180px", "300px"]
+        height: "150px"
       }}
     >
       <path
