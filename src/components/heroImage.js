@@ -5,6 +5,37 @@ import BackgroundImage from "gatsby-background-image";
 import SVG from "../components/svg";
 import { Fragment } from "react";
 
+const TextWrapper = ({ children }) => (
+  <div
+    sx={{
+      position: "absolute",
+      textAlign: "center",
+      top: "40%",
+      left: "50%",
+      transform: "translate(-50%, -50%)"
+    }}
+  >
+    {children}
+  </div>
+);
+
+const Text = () => (
+  <p
+    sx={{
+      textTransform: "uppercase",
+      letterSpacing: "20px",
+      fontWeight: "bold",
+      color: "#777676",
+      mt: "-40px",
+      marginX: "auto",
+      fontSize: ["18px"],
+      pl: ["20px", 0]
+    }}
+  >
+    PRODUCTIONS
+  </p>
+);
+
 const HeroImage = () => {
   const { allDatoCmsHeroBanner } = useStaticQuery(
     graphql`
@@ -66,17 +97,10 @@ const HeroImage = () => {
         backgroundColor={`#000`}
         sx={backgroundStyling("desktop")}
       >
-        <div
-          sx={{
-            position: "absolute",
-            textAlign: "center",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)"
-          }}
-        >
+        <TextWrapper>
           <SVG />
-        </div>
+          <Text />
+        </TextWrapper>
       </BackgroundImage>
       <BackgroundImage
         Tag="section"
@@ -84,17 +108,10 @@ const HeroImage = () => {
         backgroundColor={`#000`}
         sx={backgroundStyling("mobile")}
       >
-        <div
-          sx={{
-            position: "absolute",
-            textAlign: "center",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)"
-          }}
-        >
+        <TextWrapper>
           <SVG />
-        </div>
+          <Text />
+        </TextWrapper>
       </BackgroundImage>
     </Fragment>
   );
