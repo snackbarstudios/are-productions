@@ -14,18 +14,19 @@ const FacebookIcon = () => {
     >
       <div
         sx={{
-          width: "45px",
-          height: "40px",
+          width: "30px",
+          height: "35px",
           borderRadius: "50%",
           position: "absolute",
-          bottom: "0",
-          left: "2px"
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)"
         }}
       >
         <svg
           aria-hidden="true"
-          width="45px"
-          height="45px"
+          width="30px"
+          height="35px"
           focusable="false"
           data-prefix="fab"
           data-icon="facebook-f"
