@@ -3,22 +3,82 @@ import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 
-function SEO({ description, lang, meta, title }) {
+function SEO({ dynamicDescription, lang, meta, dynamicTitle }) {
   const { site } = useStaticQuery(
     graphql`
       query {
         site {
           siteMetadata {
+            siteUrl
+            pathPrefix
             title
+            titleAlt
             description
+            banner
             author
+            headline
+            siteLanguage
+            ogLanguage
+            facebook
+            instagram
           }
         }
       }
     `
   );
 
-  const metaDescription = description || site.siteMetadata.description;
+  const {
+    siteUrl,
+    pathPrefix,
+    title,
+    titleAlt,
+    description,
+    banner,
+    author,
+    headline,
+    siteLanguage,
+    ogLanguage,
+    facebook,
+    instagram
+  } = site.siteMetadata;
+
+  // schema.org in JSONLD format
+  // https://developers.google.com/search/docs/guides/intro-structured-data
+  // You can fill out the 'author', 'creator' with more data or another type (e.g. 'Organization')
+  const schemaOrgWebPage = {
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    url: site.siteMetadata.siteUrl,
+    headline,
+    inLanguage: siteLanguage,
+    mainEntityOfPage: siteUrl,
+    description: description,
+    name: title,
+    author: {
+      "@type": "Person",
+      name: author
+    },
+    copyrightHolder: {
+      "@type": "Person",
+      name: author
+    },
+    copyrightYear: "2019",
+    creator: {
+      "@type": "Person",
+      name: author
+    },
+    publisher: {
+      "@type": "Person",
+      name: author
+    },
+    datePublished: new Date().getFullYear(),
+    image: {
+      "@type": "ImageObject",
+      url: `${siteUrl}${banner}`
+    }
+  };
+
+  const metaDescription = dynamicDescription || description;
 
   return (
     <Helmet
@@ -26,7 +86,7 @@ function SEO({ description, lang, meta, title }) {
         lang
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={`%s | ${title}`}
       meta={[
         {
           name: `description`,
@@ -45,6 +105,10 @@ function SEO({ description, lang, meta, title }) {
           content: `website`
         },
         {
+          property: `og:image`,
+          content: banner
+        },
+        {
           name: `twitter:card`,
           content: `summary`
         },
@@ -54,14 +118,18 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:title`,
-          content: title
+          content: dynamicTitle
         },
         {
           name: `twitter:description`,
           content: metaDescription
         }
       ].concat(meta)}
-    />
+    >
+      <script type="application/ld+json">
+        {JSON.stringify(schemaOrgWebPage)}
+      </script>
+    </Helmet>
   );
 }
 
