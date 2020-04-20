@@ -65,13 +65,22 @@ const HeroImage = () => {
         width: "100%",
         backgroundAttachment: "fixed",
         backgroundPosition: "right bottom",
+        backgroundAttachment: "scroll",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
+        // oBackgroundSize: "cover",
+        // mozBackgroundSize: "cover",
         position: "relative",
-        overflow: "hidden"
+        overflow: "hidden",
+        "-o-background-size": "cover"
       }}
+
+      //       -o-background-size:cover,
+      // -moz-background-size:cover;
+      // -webkit-background-size:cover; -webkit-line-clamp: 4;
+      // `)}
     >
-      {/* <div
+      <div
         sx={{
           position: "absolute",
           textAlign: "center",
@@ -79,9 +88,9 @@ const HeroImage = () => {
           left: "50%",
           transform: "translate(-50%, -50%)"
         }}
-      > */}
-      <SVG />
-      {/* </div> */}
+      >
+        <SVG />
+      </div>
     </div>
   );
 };
