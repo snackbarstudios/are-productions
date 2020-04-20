@@ -10,9 +10,9 @@ const NavMenuMobile = ({ navitems }) => {
         listStyle: "none",
         display: "flex",
         flexDirection: "column",
-        fontSize: 7,
+        fontSize: 6,
         m: 0,
-        li: { margin: 4 }
+        li: { margin: "20px" }
       }}
     >
       {navitems.map(link => (
