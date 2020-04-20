@@ -29,7 +29,6 @@ const HeroImage = () => {
       heroImage: { fluid }
     }
   } = allDatoCmsHeroBanner.edges[0];
-  console.log(fluid);
 
   const backgroundStyling = action => {
     let props = {};

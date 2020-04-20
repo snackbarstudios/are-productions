@@ -7,14 +7,21 @@ const VideoOverlay = () => {
     <div
       sx={{
         position: "absolute",
-        img: { display: "none" },
+        img: { display: ["block", null, "none"] },
         zIndex: "1",
         width: "100%",
         height: "100%",
         backgroundColor: "rgba(0, 0, 0, 0.1)",
         ":hover": {
           backgroundColor: "rgba(0, 0, 0, 0.5)",
-          img: { display: "block" }
+          img: {
+            display: "block",
+            position: "absolute",
+            textAlign: "center",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)"
+          }
         }
       }}
     >
