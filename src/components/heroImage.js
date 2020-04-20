@@ -38,7 +38,7 @@ const HeroImage = () => {
       sx={{
         minHeight: "100vh",
         width: "100%",
-        backgroundAttachment: "fixed",
+        backgroundAttachment: ["scroll", null, "fixed"],
         backgroundPosition: "right bottom",
         backgroundRepeat: "no-repeat",
         position: "relative",
