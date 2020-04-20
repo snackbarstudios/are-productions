@@ -71,7 +71,7 @@ const HeroImage = () => {
         overflow: "hidden"
       }}
     >
-      <div
+      {/* <div
         sx={{
           position: "absolute",
           textAlign: "center",
@@ -79,9 +79,9 @@ const HeroImage = () => {
           left: "50%",
           transform: "translate(-50%, -50%)"
         }}
-      >
-        <SVG />
-      </div>
+      > */}
+      <SVG />
+      {/* </div> */}
     </div>
   );
 };
