@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { jsx, Styled } from "theme-ui";
 import { useStaticQuery, graphql } from "gatsby";
 import Lightbox from "./lightbox";
 
@@ -32,9 +32,9 @@ const Projects = () => {
   );
   return (
     <section id={datoCmsVideoSection.slug}>
-      <h2 sx={{ textAlign: "center", textTransform: "uppercase" }}>
+      <Styled.h2 sx={{ textAlign: "center", textTransform: "uppercase" }}>
         {datoCmsVideoSection.sectionTitle}
-      </h2>
+      </Styled.h2>
       {allDatoCmsProject.edges.map(video => (
         <div key={video.node.id} sx={{ display: "flex" }}>
           <article sx={{ width: "10%", position: "relative" }}>
