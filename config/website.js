@@ -9,7 +9,6 @@ module.exports = {
   siteLanguage: "en", // Language Tag on <html> element
   logo: "../src/assets/images/are-logo.png", // Used for SEO
   ogLanguage: "en_US", // Facebook Language
-  keywords: "film, filmproduction, advertisemtn, movies",
 
   // JSONLD / Manifest
   favicon: "../src/assets/images/are-logo.png", // Used for manifest favicon generation
