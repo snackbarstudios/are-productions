@@ -41,10 +41,8 @@ const HeroImage = () => {
         backgroundAttachment: "fixed",
         backgroundPosition: "right bottom",
         backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
         position: "relative",
-        overflow: "hidden",
-        // backgroundAttachment: "scroll",
+        overflow: "hidden"
       }}
     >
       <div
@@ -59,40 +57,6 @@ const HeroImage = () => {
         <SVG />
       </div>
     </BackgroundImage>
-    // <div
-    //   sx={{
-    //     backgroundImage: `url(${fluid.src})`,
-    //     minHeight: "100vh",
-    //     width: "100%",
-    //     backgroundAttachment: "fixed",
-    //     backgroundPosition: "right bottom",
-    //     backgroundAttachment: "scroll",
-    //     backgroundRepeat: "no-repeat",
-    //     backgroundSize: "cover",
-    //     // oBackgroundSize: "cover",
-    //     // mozBackgroundSize: "cover",
-    //     position: "relative",
-    //     overflow: "hidden",
-    //     "-o-background-size": "cover"
-    //   }}
-
-    //   //       -o-background-size:cover,
-    //   // -moz-background-size:cover;
-    //   // -webkit-background-size:cover; -webkit-line-clamp: 4;
-    //   // `)}
-    // >
-    //   <div
-    //     sx={{
-    //       position: "absolute",
-    //       textAlign: "center",
-    //       top: "50%",
-    //       left: "50%",
-    //       transform: "translate(-50%, -50%)"
-    //     }}
-    //   >
-    //     <SVG />
-    //   </div>
-    // </div>
   );
 };
 
