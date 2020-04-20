@@ -2,11 +2,26 @@ let env = process.env.NODE_ENV || "development";
 
 require("dotenv").config({ path: `./.env.${env}` });
 
+const website = require('./config/website');
+const pathPrefix = website.pathPrefix === '/' ? '' : website.pathPrefix;
+
+
 module.exports = {
+  //General indormation
+  pathPrefix: website.pathPrefix,
   siteMetadata: {
-    title: `Are productions`,
-    description: `Based in Stockholm, Are Productions make awesome, boundary-pushing films with a special twist on branding and storytelling.`,
-    author: `@gatsbyjs`
+    siteUrl: website.url + pathPrefix, // For gatsby-plugin-sitemap
+    pathPrefix,
+    title: website.title,
+    titleAlt: website.titleAlt,
+    description: website.description,
+    banner: website.logo,
+    headline: website.headline,
+    siteLanguage: website.siteLanguage,
+    ogLanguage: website.ogLanguage,
+    author: website.author,
+    facebook: website.facebook,
+    instagram: website.instagram
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -36,7 +51,7 @@ module.exports = {
         short_name: `are`,
         start_url: `/`,
         display: `minimal-ui`,
-        icon: `src/images/are-logo.png` // This path is relative to the root of the site.
+        icon: `src/assets/images/are-logo.png` // This path is relative to the root of the site.
       }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
