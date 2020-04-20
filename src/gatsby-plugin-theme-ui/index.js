@@ -50,6 +50,34 @@ export default {
       textTransform: "uppercase",
       mt: 4,
       mb: 2
+    },
+    h4: {
+      ":before, :after": {
+        content: '" "',
+        display: "block",
+        borderBottom: "1px solid #810904",
+        borderTop: "1px solid #810904",
+        margin: "0 20px 0 0",
+        flex: "1 0 20px"
+      },
+      ":after": {
+        margin: "0 0 0 20px"
+      },
+      whiteSpace: "nowrap",
+      fontFamily: "heading",
+      display: "flex",
+      width: ["300px", "400px"],
+      margin: "0 auto",
+      justifyContent: ["center"],
+      alignItems: ["center"],
+      textAlign: ["center"],
+      position: [null, "absolute"],
+      top: [null, "50%"],
+      left: [null, "50%"],
+      transformOrigin: "0 0",
+      transform: [null, "rotate(-90deg) translate(-50%, -50%)"],
+      fontWeight: "400",
+      textTransform: "uppercase"
     }
   }
 };
