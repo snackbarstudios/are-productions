@@ -100,10 +100,11 @@ const ContactSection = () => {
               <a
                 sx={{
                   color: "white",
-                  fontWeight: "bold",
+                  fontWeight: "heading",
                   textDecoration: "none",
                   display: "block",
-                  mb: 1
+                  mb: 1,
+                  cursor: "pointer"
                 }}
                 href={`mailto:${email}`}
               >
@@ -113,7 +114,8 @@ const ContactSection = () => {
                 sx={{
                   color: "text",
                   textDecoration: "none",
-                  display: "block"
+                  display: "block",
+                  cursor: "pointer"
                 }}
                 href={`tel:${phone}`}
               >

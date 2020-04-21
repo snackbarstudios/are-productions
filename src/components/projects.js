@@ -59,14 +59,14 @@ const Projects = () => {
             display: "flex",
             width: "100%",
             margin: ["32px 0", null],
-            flexDirection: ["column", "row"],
+            flexDirection: ["column", "column", "row"],
             position: "relative"
           }}
         >
           <article
             sx={{
-              width: ["100%", "10%"],
-              position: "absolute",
+              width: ["100%", "100%", "10%"],
+              position: [null, null, "absolute"],
               bottom: "50%",
               left: "-100px"
             }}

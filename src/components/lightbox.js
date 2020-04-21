@@ -27,7 +27,7 @@ const Lightbox = ({ videoUrls, videos, index }) => {
           fluid={videos[index].placeholderImage.fluid}
           backgroundColor={`#000`}
           sx={{
-            minHeight: "420px",
+            height: ["200px", "400px", "420px"],
             width: "100%"
           }}
         />
