@@ -27,11 +27,11 @@ const Hamburger = () => {
     }
     return {
       display: "block",
+      padding: "0",
       height: "3px",
       backgroundColor: "#9f151d",
       marginY: "5px",
       borderRadius: "2px",
-      marginLeft: 2,
       ":first-of-type": {
         width: "20px"
       },
@@ -59,12 +59,13 @@ const Hamburger = () => {
     return {
       border: "none",
       height: "50px",
-      width: " 50px",
+      width: "50px",
       borderRadius: "50%",
-      zIndex: 99,
-      position: "absolute",
-      top: "20px",
-      left: "20px",
+      padding: "0",
+      zIndex: "99",
+      position: "fixed",
+      top: "10px",
+      left: "10px",
       cursor: "pointer",
       backgroundColor: "background",
       transition: "ease-in-out 0.3s",
@@ -73,9 +74,26 @@ const Hamburger = () => {
   };
   return (
     <button onClick={toggleNavigation} sx={hamburger("colorChange")}>
-      <span sx={burgerLine("rotateCW")} />
-      <span sx={burgerLine("fade")} />
-      <span sx={burgerLine("rotateCCW")} />
+      <div
+        sx={{
+          position: "relative",
+          height: "50px",
+          width: "50px"
+        }}
+      >
+        <div
+          sx={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)"
+          }}
+        >
+          <span sx={burgerLine("rotateCW")} />
+          <span sx={burgerLine("fade")} />
+          <span sx={burgerLine("rotateCCW")} />
+        </div>
+      </div>
     </button>
   );
 };
