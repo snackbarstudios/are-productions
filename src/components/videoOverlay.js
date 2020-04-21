@@ -3,7 +3,6 @@ import { jsx } from "theme-ui";
 import PlayIcon from "../assets/images/play-icon.svg";
 import PropTypes from "prop-types";
 
-
 const VideoOverlay = ({ onClick }) => {
   return (
     <div
