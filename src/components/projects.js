@@ -37,15 +37,26 @@ const Projects = () => {
         my: [3, 5, null]
       }}
     >
-      <Styled.h2 sx={{ textAlign: "center", textTransform: "uppercase", marginBottom: "32px" }}>
+      <Styled.h2
+        sx={{
+          textAlign: "center",
+          textTransform: "uppercase",
+          marginBottom: "32px"
+        }}
+      >
         {datoCmsVideoSection.sectionTitle}
       </Styled.h2>
       {allDatoCmsProject.edges.map(video => (
-        <div key={video.node.id} sx={{ display: "flex", margin: ["32px 0", null], flexDirection: ["column", "row"] }}>
+        <div
+          key={video.node.id}
+          sx={{
+            display: "flex",
+            margin: ["32px 0", null],
+            flexDirection: ["column", "row"]
+          }}
+        >
           <article sx={{ width: ["100%", "10%"], position: "relative" }}>
-            <Styled.h4>
-              {video.node.title}
-            </Styled.h4>
+            <Styled.h4>{video.node.title}</Styled.h4>
           </article>
           <article
             sx={{
