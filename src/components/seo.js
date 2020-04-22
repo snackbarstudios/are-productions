@@ -29,17 +29,12 @@ function SEO({ dynamicDescription, lang, meta, dynamicTitle }) {
 
   const {
     siteUrl,
-    pathPrefix,
     title,
-    titleAlt,
     description,
     banner,
     author,
     headline,
-    siteLanguage,
-    ogLanguage,
-    facebook,
-    instagram
+    siteLanguage
   } = site.siteMetadata;
 
   // schema.org in JSONLD format
