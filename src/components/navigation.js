@@ -5,6 +5,7 @@ import NavMenuDesktop from "./navMenuDesktop";
 import MobileNavigation from "./mobileNavigation";
 import { useState } from "react";
 import useDocumentScrollThrottled from "../hooks/useDocumentScrollThrottled";
+import NavMenuMobile from "./navmenuMobile";
 
 const Navigation = () => {
   const { datoCmsNavigation } = useStaticQuery(
@@ -71,7 +72,17 @@ const Navigation = () => {
           ml: "auto"
         }}
       >
+        
         <NavMenuDesktop navitems={navMenu} />
+      </div>
+      <div
+        sx={{
+          display: ["block", "none", null],
+          ml: "auto"
+        }}
+      >
+        
+        <NavMenuMobile navitems={navMenu} />
       </div>
     </nav>
   );
