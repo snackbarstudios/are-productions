@@ -1,54 +1,51 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import PropTypes from "prop-types";
-import AnchorLink from "./anchorLink";
 import Hamburger from "./hamburger";
-import DropDownDesktop from "./dropdownDesktop";
+import DropDownMobile from "./dropDownMobile";
+import PropTypes from "prop-types";
 import { ToggleContextProvider } from "./toggleContext";
+import NavItem from "./navitem";
+import AnchorLink from "./anchorLink";
 
-const NavMenuDesktop = ({ navitems, anchorBold }) => {
+const NavigationMobile = ({ navitems, anchorBold }) => {
   return (
     <ToggleContextProvider>
       <div
         sx={{
-          display: ["none", null, "block"],
-          width: "100%",
-          height: "100%",
-          padding: 2
+          display: ["block", null, "none"]
         }}
       >
         <Hamburger />
-        <DropDownDesktop>
+        <DropDownMobile>
           <ul
             sx={{
+              listStyle: "none",
               display: "flex",
-              flexDirection: "row"
+              flexDirection: "column",
+              fontSize: 6,
+              m: 0,
+              li: { margin: "20px" }
             }}
           >
             {navitems.map(link => (
-              <li
-                key={link.id}
-                sx={{
-                  listStyle: "none"
-                }}
-              >
+              <NavItem key={link.id}>
                 <AnchorLink
                   href={`#${link.link.slug}`}
                   isBold={anchorBold === link.link.slug}
                 >
                   {link.linkName}
                 </AnchorLink>
-              </li>
+              </NavItem>
             ))}
           </ul>
-        </DropDownDesktop>
+        </DropDownMobile>
       </div>
     </ToggleContextProvider>
   );
 };
 
-export default NavMenuDesktop;
+export default NavigationMobile;
 
-NavMenuDesktop.propTypes = {
+NavigationMobile.propTypes = {
   navitems: PropTypes.array.isRequired
 };

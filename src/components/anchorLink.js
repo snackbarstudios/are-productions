@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { ToggleContext } from "./toggleContext";
 
 const AnchorLink = ({ children, href, isBold }) => {
+  console.log(isBold);
   const { closeNavigation } = useContext(ToggleContext);
   return (
     <a
@@ -14,7 +15,7 @@ const AnchorLink = ({ children, href, isBold }) => {
       sx={{
         fontWeight: isBold ? "heading" : "body",
         textDecoration: "none",
-        color: "primary",
+        color: isBold ? "primary" : "background",
         ":hover": {
           fontWeight: "heading"
         },
