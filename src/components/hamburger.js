@@ -12,10 +12,12 @@ const Hamburger = () => {
     if (open) {
       switch (action) {
         case "rotateCW":
-          animation.transform = "rotate(45deg) translate(45%, -45%)";
+          animation.transform = "rotate(-135deg) translate(-4px, -2px)";
+          animation.backgroundColor = "background";
           break;
         case "rotateCCW":
-          animation.transform = "rotate(-45deg) translate(45%, -45%)";
+          animation.transform = "rotate(135deg) translate(-3px, 2px)";
+          animation.backgroundColor = "background";
           break;
         default:
       }
@@ -45,12 +47,12 @@ const Hamburger = () => {
         border: "none",
         height: "50px",
         width: "50px",
-        borderRadius: "50%",
+        // borderRadius: "50%",
         padding: "0",
         zIndex: "99",
         position: "fixed",
-        top: "10px",
-        left: "10px",
+        top: 0,
+        right: "10px",
         cursor: "pointer",
         background: "transparent"
       }}

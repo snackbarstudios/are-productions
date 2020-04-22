@@ -5,7 +5,7 @@ import { useContext } from "react";
 
 import { ToggleContext } from "./toggleContext";
 
-const DropDown = ({ children }) => {
+const DropDownMobile = ({ children }) => {
   const { open } = useContext(ToggleContext);
 
   const slide = action => {
@@ -15,7 +15,7 @@ const DropDown = ({ children }) => {
         case "dropdown":
           animation.visibility = "visible";
           animation.height = "100vh";
-          animation.backgroundColor = "background";
+          animation.backgroundColor = "text";
 
           break;
         default:
@@ -41,8 +41,8 @@ const DropDown = ({ children }) => {
   return <div sx={slide("dropdown")}>{children}</div>;
 };
 
-export default DropDown;
+export default DropDownMobile;
 
-DropDown.propTypes = {
+DropDownMobile.propTypes = {
   children: PropTypes.node.isRequired
 };
