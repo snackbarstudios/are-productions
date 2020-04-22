@@ -58,10 +58,10 @@ const Navigation = () => {
         boxSizing: "border-box",
         display: "flex",
         alignItems: "center",
-        padding: 2,
-        backgroundColor: showBackground
-          ? ["transparent", null, "background"]
-          : ["transparent"]
+        backgroundColor: showBackground ? "background" : "transparent",
+        opacity: showBackground ? 1 : 0,
+        height: showBackground ? "50px" : "0%",
+        transition: " height ease-out 0.3s"
       }}
     >
       <MobileNavigation navitems={navMenu} />

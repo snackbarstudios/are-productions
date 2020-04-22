@@ -12,15 +12,10 @@ const Hamburger = () => {
     if (open) {
       switch (action) {
         case "rotateCW":
-          animation.transform = "rotate(-45deg) translate(-6px, 6px)";
-          animation.backgroundColor = "background";
+          animation.transform = "rotate(45deg) translate(45%, -45%)";
           break;
         case "rotateCCW":
-          animation.transform = "rotate(45deg) translate(-5px, -6px)";
-          animation.backgroundColor = "background";
-          break;
-        case "fade":
-          animation.backgroundColor = "transparent";
+          animation.transform = "rotate(-45deg) translate(45%, -45%)";
           break;
         default:
       }
@@ -35,9 +30,6 @@ const Hamburger = () => {
       ":first-of-type": {
         width: "20px"
       },
-      ":nth-of-type(2)": {
-        width: "14px"
-      },
       ":nth-of-type(3)": {
         width: "20px"
       },
@@ -46,34 +38,23 @@ const Hamburger = () => {
     };
   };
 
-  const hamburger = action => {
-    let animation = {};
-    if (open) {
-      switch (action) {
-        case "colorChange":
-          animation.backgroundColor = "primary";
-          break;
-        default:
-      }
-    }
-    return {
-      border: "none",
-      height: "50px",
-      width: "50px",
-      borderRadius: "50%",
-      padding: "0",
-      zIndex: "99",
-      position: "fixed",
-      top: "10px",
-      left: "10px",
-      cursor: "pointer",
-      backgroundColor: "background",
-      transition: "ease-in-out 0.3s",
-      ...animation
-    };
-  };
   return (
-    <button onClick={toggleNavigation} sx={hamburger("colorChange")}>
+    <button
+      onClick={toggleNavigation}
+      sx={{
+        border: "none",
+        height: "50px",
+        width: "50px",
+        borderRadius: "50%",
+        padding: "0",
+        zIndex: "99",
+        position: "fixed",
+        top: "10px",
+        left: "10px",
+        cursor: "pointer",
+        background: "transparent"
+      }}
+    >
       <div
         sx={{
           position: "relative",
@@ -90,7 +71,6 @@ const Hamburger = () => {
           }}
         >
           <span sx={burgerLine("rotateCW")} />
-          <span sx={burgerLine("fade")} />
           <span sx={burgerLine("rotateCCW")} />
         </div>
       </div>

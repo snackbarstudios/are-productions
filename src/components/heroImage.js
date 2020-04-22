@@ -2,15 +2,16 @@
 import { jsx } from "theme-ui";
 import { useStaticQuery, graphql } from "gatsby";
 import BackgroundImage from "gatsby-background-image";
-import SVG from "../components/svg";
 import { Fragment } from "react";
+import Image from "./image";
 
-const TextWrapper = ({ children }) => (
+const LogoWrapper = ({ children }) => (
   <div
     sx={{
+      width: "100%",
       position: "absolute",
       textAlign: "center",
-      top: "40%",
+      top: "50%",
       left: "50%",
       transform: "translate(-50%, -50%)"
     }}
@@ -19,41 +20,33 @@ const TextWrapper = ({ children }) => (
   </div>
 );
 
-const Text = () => (
-  <p
-    sx={{
-      textTransform: "uppercase",
-      letterSpacing: "20px",
-      fontWeight: "bold",
-      color: "#777676",
-      mt: "-40px",
-      marginX: "auto",
-      fontSize: ["18px"],
-      pl: ["20px", 0]
-    }}
-  >
-    PRODUCTIONS
-  </p>
-);
-
 const HeroImage = () => {
-  const { allDatoCmsHeroBanner } = useStaticQuery(
+  const { allDatoCmsHeroBanner, datoCmsLogo } = useStaticQuery(
     graphql`
       query {
         allDatoCmsHeroBanner {
           edges {
             node {
               heroImage {
-                fluid {
+                fluid(maxWidth: 1600) {
                   ...GatsbyDatoCmsFluid
                 }
               }
             }
           }
         }
+        datoCmsLogo {
+          logoDesktop {
+            fluid(maxWidth: 1600) {
+              ...GatsbyDatoCmsFluid
+            }
+          }
+        }
       }
     `
   );
+
+  const { logoDesktop } = datoCmsLogo;
 
   const {
     node: {
@@ -97,21 +90,36 @@ const HeroImage = () => {
         backgroundColor={`#000`}
         sx={backgroundStyling("desktop")}
       >
-        <TextWrapper>
-          <SVG />
-          <Text />
-        </TextWrapper>
+        <LogoWrapper>
+          <div
+            sx={{
+              height: "350px",
+              width: "400px",
+              margin: "0 auto"
+            }}
+          >
+            <Image image={logoDesktop.fluid} />
+          </div>
+        </LogoWrapper>
       </BackgroundImage>
+
       <BackgroundImage
         Tag="section"
         fluid={fluid}
         backgroundColor={`#000`}
         sx={backgroundStyling("mobile")}
       >
-        <TextWrapper>
-          <SVG />
-          <Text />
-        </TextWrapper>
+        <LogoWrapper>
+          <div
+            sx={{
+              height: "350px",
+              width: ["250px", "300px"],
+              margin: "0 auto"
+            }}
+          >
+            <Image image={logoDesktop.fluid} />
+          </div>
+        </LogoWrapper>
       </BackgroundImage>
     </Fragment>
   );

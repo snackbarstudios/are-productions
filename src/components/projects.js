@@ -57,20 +57,12 @@ const Projects = () => {
           key={video.node.id}
           sx={{
             display: "flex",
-            width: "100%",
+
             margin: ["32px 0", null],
-            flexDirection: ["column", "column", "row"],
-            position: "relative"
+            flexDirection: ["column", "row"]
           }}
         >
-          <article
-            sx={{
-              width: ["100%", "100%", "10%"],
-              position: [null, null, "absolute"],
-              bottom: "50%",
-              left: "-100px"
-            }}
-          >
+          <article sx={{ width: ["100%", "10%"], position: "relative" }}> 
             <Styled.h4>{video.node.title}</Styled.h4>
           </article>
           <article
