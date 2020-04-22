@@ -2,10 +2,9 @@
 import { jsx } from "theme-ui";
 import PropTypes from "prop-types";
 import { useContext } from "react";
-import AnchorLink from "./anchorLink";
 import { ToggleContext } from "./toggleContext";
 
-const NavItem = ({ children, href }) => {
+const NavItem = ({ children, href, isBold }) => {
   const { open } = useContext(ToggleContext);
 
   const item = action => {
@@ -31,16 +30,13 @@ const NavItem = ({ children, href }) => {
       ...animation
     };
   };
-  return (
-    <li sx={item("colorChange")}>
-      <AnchorLink href={`#${href}`}>{children}</AnchorLink>
-    </li>
-  );
+  return <li sx={item("colorChange")}>{children}</li>;
 };
 
 export default NavItem;
 
 NavItem.propTypes = {
   children: PropTypes.node.isRequired,
-  href: PropTypes.string.isRequired
+  href: PropTypes.string.isRequired,
+  isBold: PropTypes.bool.isRequired
 };
