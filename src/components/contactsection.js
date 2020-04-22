@@ -91,28 +91,31 @@ const ContactSection = () => {
 
               <p
                 sx={{
-                  mt: 4
+                  mt: 4,
+                  mb: 1
                 }}
               >
                 {name}
               </p>
               <a
                 sx={{
-                  color: "primary",
-                  fontWeight: "bold",
+                  color: "white",
+                  fontWeight: "heading",
                   textDecoration: "none",
-                  display: "block"
+                  display: "block",
+                  mb: 1,
+                  cursor: "pointer"
                 }}
                 href={`mailto:${email}`}
               >
                 {email}
               </a>
-              <br />
               <a
                 sx={{
                   color: "text",
                   textDecoration: "none",
-                  display: "block"
+                  display: "block",
+                  cursor: "pointer"
                 }}
                 href={`tel:${phone}`}
               >

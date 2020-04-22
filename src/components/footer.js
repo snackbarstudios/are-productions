@@ -5,12 +5,15 @@ import InstagramIcon from "./instagramIcon";
 import FacebookIcon from "./facebookIcon";
 
 const Footer = () => {
-  const { datoCmsSocialMediaSection } = useStaticQuery(
+  const { datoCmsSocialMediaSection, datoCmsFooter } = useStaticQuery(
     graphql`
       query {
         datoCmsSocialMediaSection {
           facebookLink
           instagramLink
+        }
+        datoCmsFooter {
+          copyright
         }
       }
     `
@@ -52,10 +55,12 @@ const Footer = () => {
       <div
         sx={{
           textAlign: "center",
-          fontSize: 0
+          fontSize: 0,
+          mt: 4
         }}
       >
-        © {new Date().getFullYear()}, Snackbar Studios
+        <p>{datoCmsFooter.copyright}</p>
+        <p> © {new Date().getFullYear()} website powered by Snackbar Studios</p>
       </div>
     </footer>
   );

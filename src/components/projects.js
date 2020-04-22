@@ -30,6 +30,12 @@ const Projects = () => {
       }
     `
   );
+  const videoUrls = [];
+  allDatoCmsProject.edges.forEach(video => {
+    video.node.videos.forEach(vid => {
+      videoUrls.push(vid.videoUrl);
+    });
+  });
   return (
     <section
       id={datoCmsVideoSection.slug}
@@ -51,24 +57,30 @@ const Projects = () => {
           key={video.node.id}
           sx={{
             display: "flex",
+
             margin: ["32px 0", null],
             flexDirection: ["column", "row"]
           }}
         >
-          <article sx={{ width: ["100%", "10%"], position: "relative" }}>
+          <article sx={{ width: ["100%", "10%"], position: "relative" }}> 
             <Styled.h4>{video.node.title}</Styled.h4>
           </article>
           <article
             sx={{
               ":hover": { cursor: "pointer" },
-              width: ["100%", "90%"],
+              width: ["100%"],
               marginY: "32px",
               display: "flex"
             }}
           >
             <div sx={{ display: "flex", width: "100%" }}>
-              {video.node.videos.map(video => (
-                <Lightbox key={video.videoUrl} video={video} />
+              {video.node.videos.map((vid, index) => (
+                <Lightbox
+                  index={index}
+                  key={video.videoUrl}
+                  videoUrls={videoUrls}
+                  videos={video.node.videos}
+                />
               ))}
             </div>
           </article>
