@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import Hamburger from "./hamburger";
-import DropDown from "./dropDown";
-import NavMenuMobile from "./navmenumobile";
+import DropDownMobile from "./dropDownMobile";
+import NavMenuMobile from "./navmenuMobile";
 import PropTypes from "prop-types";
 import { ToggleContextProvider } from "./toggleContext";
 
@@ -19,9 +19,9 @@ const MobileNavigation = ({ navitems }) => {
         }}
       >
         <Hamburger />
-        <DropDown>
+        <DropDownMobile>
           <NavMenuMobile navitems={navitems} />
-        </DropDown>
+        </DropDownMobile>
       </div>
     </ToggleContextProvider>
   );

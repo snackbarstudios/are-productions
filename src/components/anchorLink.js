@@ -7,29 +7,29 @@ import { ToggleContext } from "./toggleContext";
 const AnchorLink = ({ children, href, isBold }) => {
   const { closeNavigation } = useContext(ToggleContext);
   return (
-    <div>
-      <a
-        aria-label={`Scroll to ${href}`}
-        href={href}
-        onClick={closeNavigation}
-        sx={{
-          fontWeight: isBold ? "heading" : "body",
-          position: "relative",
-          textDecoration: "none",
-          color: "primary",
-          ":hover": {
-            fontWeight: "heading"
-          },
-          ":focus": { fontWeight: "heading" },
-          ":hover ~ div": {
-            width: "40px",
-            background: "#810904"
-          }
-        }}
-      >
-        {children}
-      </a>
-      <div
+    // <div>
+    <a
+      aria-label={`Scroll to ${href}`}
+      href={href}
+      onClick={closeNavigation}
+      sx={{
+        fontWeight: isBold ? "heading" : "body",
+        // position: "relative",
+        textDecoration: "none",
+        color: "background",
+        ":hover": {
+          fontWeight: "heading"
+        },
+        ":focus": { fontWeight: "heading" }
+        // ":hover ~ div": {
+        //   width: "40px",
+        //   background: "#810904"
+        // }
+      }}
+    >
+      {children}
+    </a>
+    /* <div
         sx={{
           width: "0px",
           height: "2px",
@@ -39,7 +39,7 @@ const AnchorLink = ({ children, href, isBold }) => {
           transition: "0.5s ease"
         }}
       ></div>
-    </div>
+    </div> */
   );
 };
 AnchorLink.defaultProps = {
