@@ -77,7 +77,7 @@ const Projects = () => {
           <article
             sx={{
               ":hover": { cursor: "pointer" },
-              width: ["100%"],
+              width: "100%",
               marginY: "32px",
               display: "flex"
             }}
