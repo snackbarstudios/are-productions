@@ -6,7 +6,7 @@ export default {
     highlight: "B6110B"
   },
   breakpoints: ["40em", "56em", "64em"],
-  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+  space: [0, 4, 8, 16, 32, 64, 96, 128, 256, 512],
   fonts: {
     body: "Raleway, sans-serif",
     heading: "Roboto, sans-serif"
