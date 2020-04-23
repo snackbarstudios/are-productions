@@ -5,7 +5,6 @@ import { useContext } from "react";
 import { ToggleContext } from "./toggleContext";
 
 const AnchorLink = ({ children, href, isBold }) => {
-  console.log(isBold);
   const { closeNavigation } = useContext(ToggleContext);
   return (
     <a

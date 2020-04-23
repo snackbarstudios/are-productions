@@ -29,7 +29,7 @@ const InstagramIcon = () => {
           width="35px"
           height="35px"
           data-icon="instagram"
-          class="svg-inline--fa fa-instagram fa-w-14"
+          className="svg-inline--fa fa-instagram fa-w-14"
           role="img"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 448 512"
