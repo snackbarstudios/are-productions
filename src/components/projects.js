@@ -11,12 +11,13 @@ const Projects = () => {
           slug
           sectionTitle
         }
-        allDatoCmsProject {
+        allDatoCmsProject(sort: { fields: [videos___order], order: ASC }) {
           edges {
             node {
               id
               title
               videos {
+                order
                 videoUrl
                 placeholderImage {
                   fluid {
@@ -52,7 +53,7 @@ const Projects = () => {
       >
         {datoCmsVideoSection.sectionTitle}
       </Styled.h2>
-      {allDatoCmsProject.edges.map(video => (
+      {allDatoCmsProject.edges.map((video, index) => (
         <div
           key={video.node.id}
           sx={{
@@ -82,9 +83,10 @@ const Projects = () => {
             }}
           >
             <div sx={{ display: "flex", width: "100%" }}>
-              {video.node.videos.map((vid, index) => (
+              {video.node.videos.map((vid, i) => (
                 <Lightbox
                   index={index}
+                  i={i}
                   key={vid.videoUrl}
                   videoUrls={videoUrls}
                   videos={video.node.videos}

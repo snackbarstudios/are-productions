@@ -7,15 +7,11 @@ import VideoOverlay from "./videoOverlay";
 import PropTypes from "prop-types";
 
 const Lightbox = ({ videoUrls, videos, index }) => {
-  const [lightboxController, setLightboxController] = useState({
-    toggler: false,
-    slide: 1
-  });
+  const [toggler, setToggler] = useState(false);
+  const [slideToShow, setSlideToShow] = useState(0);
   function openLightboxOnSlide(number) {
-    setLightboxController({
-      toggler: !lightboxController.toggler,
-      slide: number
-    });
+    setToggler(!toggler);
+    setSlideToShow(number);
   }
   return (
     <Fragment>
@@ -25,7 +21,7 @@ const Lightbox = ({ videoUrls, videos, index }) => {
           Tag="section"
           key={index}
           onClick={() => openLightboxOnSlide(index)}
-          fluid={videos[index].placeholderImage.fluid}
+          fluid={videos[0].placeholderImage.fluid}
           backgroundColor={`#000`}
           sx={{
             height: ["200px", "400px", "420px"],
@@ -34,9 +30,12 @@ const Lightbox = ({ videoUrls, videos, index }) => {
         />
       </div>
       <FsLightbox
-        toggler={lightboxController.toggler}
+        toggler={toggler}
         key={index}
-        thumbs={[videos[index].placeholderImage.fluid.src]}
+        slide={slideToShow}
+        sourceIndex={slideToShow}
+        onClose={() => setSlideToShow(0)}
+        thumbs={[videos[0].placeholderImage.fluid.src]}
         customSources={videoUrls.map(url => {
           return (
             <iframe
