@@ -110,7 +110,7 @@ const ContactSection = () => {
                       color: "highlight"
                     }
                   }}
-                  href={`mailto:${email}`}
+                  href={`mailto:${emailName}@${email}`}
                 >
                   {emailName}
                   <span sx={{ color: "primary", fontWeight: "heading" }}>
