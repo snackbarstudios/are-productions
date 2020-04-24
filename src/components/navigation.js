@@ -110,15 +110,22 @@ const Navigation = () => {
         transition: "all ease-out 0.5s"
       }}
     >
-      <NavigationMobile navitems={navMenu} anchorBold={anchorBold} />
-      <div
+      <NavigationMobile
         sx={{
-          display: ["none", null, "block"],
+          display: ["block", "none", null],
           ml: "auto"
         }}
-      >
-        <NavMenuDesktop navitems={navMenu} anchorBold={anchorBold} />
-      </div>
+        navitems={navMenu}
+        anchorBold={anchorBold}
+      />
+      <NavMenuDesktop
+        sx={{
+          display: ["none", "block", null],
+          ml: "auto"
+        }}
+        navitems={navMenu}
+        anchorBold={anchorBold}
+      />
     </nav>
   );
 };
