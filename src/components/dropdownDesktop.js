@@ -13,9 +13,9 @@ const DropDownDesktop = ({ children }) => {
     if (open) {
       switch (action) {
         case "dropdown":
-          animation.visibility = "visible";
-          animation.height = "13vh";
+          animation.height = "60px";
           animation.backgroundColor = "text";
+          animation.transition = "height 0.5s";
           break;
         default:
       }
@@ -28,9 +28,8 @@ const DropDownDesktop = ({ children }) => {
       top: 0,
       zIndex: 10,
       width: "100%",
-      visibility: "hidden",
       justifyContent: "center",
-      transition: "height 0.2s ease-out ",
+      transition: "height 0.5s, background 2s",
       ...animation
     };
   };

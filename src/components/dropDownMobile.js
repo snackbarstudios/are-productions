@@ -15,13 +15,13 @@ const DropDownMobile = ({ children }) => {
         case "dropdown":
           animation.visibility = "visible";
           animation.height = "100vh";
-          animation.backgroundColor = "text";
           break;
         default:
       }
     }
     return {
       backgroundColor: "background",
+      color: "primary",
       display: "flex",
       flexDirection: "column",
       height: "0",
