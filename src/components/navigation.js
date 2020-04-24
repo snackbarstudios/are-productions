@@ -46,8 +46,8 @@ const Navigation = () => {
   const { logoMobile } = datoCmsLogo;
 
   const [showBackground, setBackground] = useState(false);
-  const MINIMUM_SCROLL = 800;
-  const TIMEOUT_DELAY = 100;
+  const MINIMUM_SCROLL = 100;
+  const TIMEOUT_DELAY = 50;
 
   useDocumentScrollThrottled(callbackData => {
     const { currentScrollTop } = callbackData;
@@ -76,7 +76,6 @@ const Navigation = () => {
         transition: "all ease-out 0.5s"
       }}
     >
-      
       <Link
         to="/"
         sx={{
@@ -88,7 +87,7 @@ const Navigation = () => {
       >
         <Image image={logoMobile.fluid} />
       </Link>
-      
+
       <NavigationMobile
         sx={{
           display: ["block", "none", null],

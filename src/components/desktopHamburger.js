@@ -2,11 +2,9 @@
 import { jsx } from "theme-ui";
 import { useContext } from "react";
 import { ToggleContext } from "./toggleContext";
-import useBodyClass from "../hooks/useBodyClass";
 
-const Hamburger = () => {
+const DesktopHamburger = () => {
   const { open, toggleNavigation } = useContext(ToggleContext);
-  useBodyClass(`no-scroll`, open);
 
   const burgerLine = action => {
     let animation = {};
@@ -14,11 +12,11 @@ const Hamburger = () => {
       switch (action) {
         case "rotateCW":
           animation.transform = "rotate(-135deg) translate(-4px, -2px)";
-          animation.backgroundColor = "primary";
+          animation.backgroundColor = "background";
           break;
         case "rotateCCW":
           animation.transform = "rotate(135deg) translate(-3px, 2px)";
-          animation.backgroundColor = "primary";
+          animation.backgroundColor = "background";
           break;
         default:
       }
@@ -27,7 +25,7 @@ const Hamburger = () => {
       display: "block",
       padding: "0",
       height: "3px",
-      backgroundColor: "primary",
+      backgroundColor: "#9f151d",
       marginY: "5px",
       borderRadius: "2px",
       ":first-of-type": {
@@ -46,8 +44,8 @@ const Hamburger = () => {
       onClick={toggleNavigation}
       sx={{
         border: "none",
-        height: "50px",
         outline: "none",
+        height: "50px",
         width: "50px",
         padding: "0",
         zIndex: "99",
@@ -81,4 +79,4 @@ const Hamburger = () => {
   );
 };
 
-export default Hamburger;
+export default DesktopHamburger;
