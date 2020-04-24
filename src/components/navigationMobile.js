@@ -7,12 +7,12 @@ import { ToggleContextProvider } from "./toggleContext";
 import NavItem from "./navitem";
 import AnchorLink from "./anchorLink";
 
-const NavigationMobile = ({ navitems, anchorBold }) => {
+const NavigationMobile = ({ navitems }) => {
   return (
     <ToggleContextProvider>
       <div
         sx={{
-          display: ["block", null, "none"]
+          display: ["block", "none", null]
         }}
       >
         <Hamburger />
@@ -24,15 +24,14 @@ const NavigationMobile = ({ navitems, anchorBold }) => {
               flexDirection: "column",
               fontSize: 6,
               m: 0,
-              li: { margin: "20px" }
+              width: "100%",
+              height: "auto",
+              li: { margin: "28px" }
             }}
           >
             {navitems.map(link => (
               <NavItem key={link.id}>
-                <AnchorLink
-                  href={`#${link.link.slug}`}
-                  isBold={anchorBold === link.link.slug}
-                >
+                <AnchorLink href={`#${link.link.slug}`}>
                   {link.linkName}
                 </AnchorLink>
               </NavItem>

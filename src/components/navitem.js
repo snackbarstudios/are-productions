@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { useContext } from "react";
 import { ToggleContext } from "./toggleContext";
 
-const NavItem = ({ children, href, isBold }) => {
+const NavItem = ({ children }) => {
   const { open } = useContext(ToggleContext);
 
   const item = action => {
@@ -36,7 +36,5 @@ const NavItem = ({ children, href, isBold }) => {
 export default NavItem;
 
 NavItem.propTypes = {
-  children: PropTypes.node.isRequired,
-  href: PropTypes.string.isRequired,
-  isBold: PropTypes.bool.isRequired
+  children: PropTypes.node.isRequired
 };

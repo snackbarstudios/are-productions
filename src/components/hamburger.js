@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { useContext } from "react";
-
 import { ToggleContext } from "./toggleContext";
 
 const Hamburger = () => {
@@ -50,8 +49,8 @@ const Hamburger = () => {
         padding: "0",
         zIndex: "99",
         position: "fixed",
-        top: 0,
-        right: "10px",
+        top: "15px",
+        right: "5px",
         cursor: "pointer",
         background: "transparent"
       }}
