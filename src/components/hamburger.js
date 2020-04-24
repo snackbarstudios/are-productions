@@ -49,7 +49,7 @@ const Hamburger = () => {
         padding: "0",
         zIndex: "99",
         position: "fixed",
-        top: "15px",
+        top: "5px",
         right: "5px",
         cursor: "pointer",
         background: "transparent"

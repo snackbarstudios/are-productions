@@ -1,15 +1,23 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { useStaticQuery, graphql } from "gatsby";
-import { useState, useEffect } from "react";
+import { useStaticQuery, graphql, Link } from "gatsby";
+import { useState } from "react";
 import NavMenuDesktop from "./navMenuDesktop";
 import NavigationMobile from "./navigationMobile";
 import useDocumentScrollThrottled from "../hooks/useDocumentScrollThrottled";
+import Image from "./image";
 
 const Navigation = () => {
-  const { datoCmsNavigation } = useStaticQuery(
+  const { datoCmsNavigation, datoCmsLogo } = useStaticQuery(
     graphql`
       query {
+        datoCmsLogo {
+          logoMobile {
+            fluid(maxWidth: 1600) {
+              ...GatsbyDatoCmsFluid
+            }
+          }
+        }
         datoCmsNavigation {
           navMenu {
             id
@@ -35,6 +43,8 @@ const Navigation = () => {
   );
 
   const { navMenu } = datoCmsNavigation;
+  const { logoMobile } = datoCmsLogo;
+
   const [showBackground, setBackground] = useState(false);
   const MINIMUM_SCROLL = 800;
   const TIMEOUT_DELAY = 100;
@@ -49,57 +59,13 @@ const Navigation = () => {
     }, TIMEOUT_DELAY);
   });
 
-  const [anchorBold, setAnchorBold] = useState(null);
-  let observer;
-
-  const [options, setOptions] = useState();
-
-  useEffect(() => {
-    if (typeof document !== `undefined`) {
-      setOptions({
-        root: document.body.querySelector(null),
-        rootMargin: "0px",
-        threshold: 0.3
-      });
-
-      observer = new IntersectionObserver(callback, options);
-    }
-  }, []);
-
-  const callback = entries => {
-    let anchorId;
-
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        anchorId = entry.target.id;
-      }
-    });
-
-    if (anchorId) {
-      setAnchorBold(anchorId);
-    } else {
-      setAnchorBold(null);
-    }
-  };
-
-  useEffect(() => {
-    if (navMenu.length) {
-      navMenu.forEach(({ link }) => {
-        const target = document.querySelector(`#${link.slug}`);
-        if (target && typeof observer !== `undefined`) {
-          observer.observe(target);
-        }
-      });
-    }
-  }, [navMenu, observer]);
-
   return (
     <nav
       sx={{
         position: "fixed",
         zIndex: 3,
         width: "100%",
-        height: "80px",
+        height: "60px",
         boxSizing: "border-box",
         display: "flex",
         alignItems: "center",
@@ -110,13 +76,25 @@ const Navigation = () => {
         transition: "all ease-out 0.5s"
       }}
     >
+      
+      <Link
+        to="/"
+        sx={{
+          width: "25px",
+          marginLeft: "16px",
+          position: "realtive",
+          zIndex: 99
+        }}
+      >
+        <Image image={logoMobile.fluid} />
+      </Link>
+      
       <NavigationMobile
         sx={{
           display: ["block", "none", null],
           ml: "auto"
         }}
         navitems={navMenu}
-        anchorBold={anchorBold}
       />
       <NavMenuDesktop
         sx={{
@@ -124,7 +102,6 @@ const Navigation = () => {
           ml: "auto"
         }}
         navitems={navMenu}
-        anchorBold={anchorBold}
       />
     </nav>
   );

@@ -3,9 +3,9 @@ import { jsx } from "theme-ui";
 import Hamburger from "./hamburger";
 import DropDownMobile from "./dropDownMobile";
 import PropTypes from "prop-types";
-import { ToggleContextProvider } from "./toggleContext";
 import NavItem from "./navitem";
 import AnchorLink from "./anchorLink";
+import { ToggleContextProvider } from "./toggleContext";
 
 const NavigationMobile = ({ navitems }) => {
   return (
