@@ -2,9 +2,11 @@
 import { jsx } from "theme-ui";
 import { useContext } from "react";
 import { ToggleContext } from "./toggleContext";
+import useBodyClass from "../hooks/useBodyClass";
 
 const Hamburger = () => {
   const { open, toggleNavigation } = useContext(ToggleContext);
+  useBodyClass(`no-scroll`, open);
 
   const burgerLine = action => {
     let animation = {};

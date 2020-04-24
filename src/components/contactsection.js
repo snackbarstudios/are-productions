@@ -99,11 +99,14 @@ const ContactSection = () => {
               </p>
               <a
                 sx={{
-                  color: "white",
-                  fontWeight: "heading",
+                  color: "primary",
                   textDecoration: "none",
                   display: "block",
-                  my: 2
+                  fontWeight: "bold",
+                  my: 2,
+                  ":hover": {
+                    color: "highlight"
+                  }
                 }}
                 href={`mailto:${email}`}
               >
@@ -129,7 +132,12 @@ const ContactSection = () => {
           color: "primary",
           fontWeight: "bold",
           textDecoration: "none",
-          display: "block"
+          display: "block",
+          ":hover": {
+            ":hover": {
+              color: "highlight"
+            }
+          }
         }}
         href={`mailto:${companyEmail}`}
       >
