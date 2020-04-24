@@ -4,7 +4,7 @@ import { jsx } from "theme-ui";
 import { useContext } from "react";
 import { ToggleContext } from "./toggleContext";
 
-const AnchorLink = ({ children, href, isBold }) => {
+const AnchorLink = ({ children, href }) => {
   const { closeNavigation } = useContext(ToggleContext);
   return (
     <a
@@ -12,9 +12,10 @@ const AnchorLink = ({ children, href, isBold }) => {
       href={href}
       onClick={closeNavigation}
       sx={{
-        fontWeight: isBold ? "heading" : "body",
+        fontWeight: "body",
         textDecoration: "none",
-        color: isBold ? "primary" : "background",
+        textTransform: "uppercase",
+        color: "background",
         ":hover": {
           fontWeight: "heading"
         },
@@ -25,14 +26,11 @@ const AnchorLink = ({ children, href, isBold }) => {
     </a>
   );
 };
-AnchorLink.defaultProps = {
-  isBold: false
-};
+
 
 AnchorLink.propTypes = {
   children: PropTypes.node.isRequired,
-  href: PropTypes.string.isRequired,
-  isBold: PropTypes.bool
+  href: PropTypes.string.isRequired
 };
 
 export default AnchorLink;
