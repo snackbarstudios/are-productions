@@ -31,7 +31,7 @@ const NavigationMobile = ({ navitems, anchorBold }) => {
               <NavItem key={link.id}>
                 <AnchorLink
                   href={`#${link.link.slug}`}
-                  isBold={anchorBold === link.link.slug}
+                  isBold={anchorBold ? anchorBold === link.link.slug : false}
                 >
                   {link.linkName}
                 </AnchorLink>
