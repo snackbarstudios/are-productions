@@ -2,9 +2,11 @@
 import { jsx } from "theme-ui";
 import { useContext } from "react";
 import { ToggleContext } from "./toggleContext";
+import useBodyClass from "../hooks/useBodyClass";
 
 const Hamburger = () => {
   const { open, toggleNavigation } = useContext(ToggleContext);
+  useBodyClass(`no-scroll`, open);
 
   const burgerLine = action => {
     let animation = {};
@@ -49,7 +51,7 @@ const Hamburger = () => {
         padding: "0",
         zIndex: "99",
         position: "fixed",
-        top: "15px",
+        top: "5px",
         right: "5px",
         cursor: "pointer",
         background: "transparent"

@@ -2,8 +2,8 @@ export default {
   colors: {
     text: "#fff",
     background: "#000",
-    primary: "#810904",
-    highlight: "B6110B"
+    primary: "#970009",
+    highlight: "#D3020C"
   },
   breakpoints: ["40em", "56em", "64em"],
   space: [0, 4, 8, 16, 32, 64, 96, 128, 256, 512],

@@ -6,7 +6,7 @@ import Hamburger from "./hamburger";
 import DropDownDesktop from "./dropdownDesktop";
 import { ToggleContextProvider } from "./toggleContext";
 
-const NavMenuDesktop = ({ navitems, anchorBold }) => {
+const NavMenuDesktop = ({ navitems }) => {
   return (
     <ToggleContextProvider>
       <div
@@ -19,23 +19,34 @@ const NavMenuDesktop = ({ navitems, anchorBold }) => {
       >
         <Hamburger />
         <DropDownDesktop>
+          <div
+            sx={{
+              height: "1px",
+              width: "88%",
+              backgroundColor: "black",
+              marginX: "auto",
+              marginTop: "30px"
+            }}
+          />
           <ul
             sx={{
               display: "flex",
-              flexDirection: "row"
+              flexDirection: "row",
+              justifyContent: "flex-end",
+              marginTop: 3,
+              marginRight: "6vw"
             }}
           >
             {navitems.map(link => (
               <li
                 key={link.id}
                 sx={{
-                  listStyle: "none"
+                  listStyle: "none",
+                  fontSize: 1,
+                  marginLeft: 3
                 }}
               >
-                <AnchorLink
-                  href={`#${link.link.slug}`}
-                  isBold={anchorBold === link.link.slug}
-                >
+                <AnchorLink href={`#${link.link.slug}`}>
                   {link.linkName}
                 </AnchorLink>
               </li>
