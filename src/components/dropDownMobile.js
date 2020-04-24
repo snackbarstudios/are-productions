@@ -16,7 +16,6 @@ const DropDownMobile = ({ children }) => {
           animation.visibility = "visible";
           animation.height = "100vh";
           animation.backgroundColor = "text";
-
           break;
         default:
       }
@@ -34,6 +33,7 @@ const DropDownMobile = ({ children }) => {
       visibility: "hidden",
       justifyContent: "center",
       transition: "all 0.6s ease-out ",
+
       ...animation
     };
   };
