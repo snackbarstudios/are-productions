@@ -2,7 +2,7 @@
 import { jsx } from "theme-ui";
 import PropTypes from "prop-types";
 import AnchorLink from "./anchorLink";
-import Hamburger from "./hamburger";
+import DesktopHamburger from "./desktopHamburger";
 import DropDownDesktop from "./dropdownDesktop";
 import { ToggleContextProvider } from "./toggleContext";
 
@@ -17,24 +17,15 @@ const NavMenuDesktop = ({ navitems }) => {
           padding: 2
         }}
       >
-        <Hamburger />
+        <DesktopHamburger />
         <DropDownDesktop>
-          <div
-            sx={{
-              height: "1px",
-              width: "88%",
-              backgroundColor: "black",
-              marginX: "auto",
-              marginTop: "30px"
-            }}
-          />
           <ul
             sx={{
               display: "flex",
               flexDirection: "row",
-              justifyContent: "flex-end",
+              justifyContent: "center",
               marginTop: 3,
-              marginRight: "6vw"
+              marginRight: "1.45rem"
             }}
           >
             {navitems.map(link => (
@@ -43,7 +34,10 @@ const NavMenuDesktop = ({ navitems }) => {
                 sx={{
                   listStyle: "none",
                   fontSize: 1,
-                  marginLeft: 3
+                  marginLeft: 5,
+                  ":first-of-type": {
+                    marginLeft: "0"
+                  }
                 }}
               >
                 <AnchorLink href={`#${link.link.slug}`}>
