@@ -140,7 +140,7 @@ const ContactSection = () => {
           mt: 6,
           mb: 3,
           color: "white",
-          fontWeight: "bold",
+          fontWeight: "heading",
           textDecoration: "none",
           display: "block",
           ":hover": {
