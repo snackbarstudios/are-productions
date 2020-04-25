@@ -69,7 +69,7 @@ const Projects = () => {
               width: ["100%", "100%", "10%"],
               position: [null, null, "absolute"],
               top: "50%",
-              left: "-50px"
+              left: "-60px"
             }}
           >
             <Styled.h4>{video.node.title}</Styled.h4>

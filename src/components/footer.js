@@ -14,6 +14,7 @@ const Footer = () => {
         }
         datoCmsFooter {
           copyright
+          copyrightEnding
         }
       }
     `
@@ -56,11 +57,25 @@ const Footer = () => {
         sx={{
           textAlign: "center",
           fontSize: 0,
-          mt: 4
+          mt: 3
         }}
       >
-        <p sx={{ px: [3, 5] }}>{datoCmsFooter.copyright}</p>
-        <p> © {new Date().getFullYear()} website powered by Snackbar Studios</p>
+        <p sx={{ px: [3, 5], mb: 0 }}>{datoCmsFooter.copyright}</p>
+        <p sx={{ px: [3, 5] }}>{datoCmsFooter.copyrightEnding}</p>
+        <a
+          href="https://www.snackbarstudios.se/"
+          sx={{
+            mb: 0,
+            color: "white",
+            textDecoration: "none",
+            fontWeight: "bold",
+            ":hover": {
+              fontWeight: "heading"
+            }
+          }}
+        >
+          {new Date().getFullYear()} website powered by Snackbar Studios
+        </a>
       </div>
     </footer>
   );
