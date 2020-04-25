@@ -42,7 +42,7 @@ const ContactSection = () => {
     <section
       id={slug}
       sx={{
-        mmarginTop: [3, 5, null],
+        marginTop: [3, 5, null],
         textAlign: "center",
         width: "100%"
       }}
