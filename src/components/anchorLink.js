@@ -21,7 +21,7 @@ const AnchorLink = ({ children, href }) => {
       }
     }
     return {
-      fontWeight: "bold",
+      fontWeight: ["heading", "bold", "bold"],
       textDecoration: "none",
       textTransform: "uppercase",
       color: ["primary", "background"],

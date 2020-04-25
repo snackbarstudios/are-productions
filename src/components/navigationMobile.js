@@ -22,7 +22,7 @@ const NavigationMobile = ({ navitems }) => {
               listStyle: "none",
               display: "flex",
               flexDirection: "column",
-              fontSize: 6,
+              fontSize: "36px",
               m: 0,
               width: "100%",
               height: "auto",

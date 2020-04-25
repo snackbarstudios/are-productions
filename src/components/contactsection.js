@@ -12,6 +12,7 @@ const ContactSection = () => {
           slug
           text
           companyEmail
+          companyEmailEnding
           contactDetails {
             phone
             name
@@ -33,14 +34,15 @@ const ContactSection = () => {
     title,
     text,
     companyEmail,
-    contactDetails
+    contactDetails,
+    companyEmailEnding
   } = datoCmsContactSection;
 
   return (
     <section
       id={slug}
       sx={{
-        my: [3, 5, null],
+        marginTop: [3, 5, null],
         textAlign: "center",
         width: "100%"
       }}
@@ -107,7 +109,7 @@ const ContactSection = () => {
                     fontWeight: "heading",
                     my: 2,
                     ":hover": {
-                      color: "highlight"
+                      color: "primary"
                     }
                   }}
                   href={`mailto:${emailName}@${email}`}
@@ -136,19 +138,22 @@ const ContactSection = () => {
       <a
         sx={{
           mt: 6,
-          color: "primary",
-          fontWeight: "bold",
+          mb: 3,
+          color: "white",
+          fontWeight: "heading",
           textDecoration: "none",
           display: "block",
           ":hover": {
             ":hover": {
-              color: "highlight"
+              color: "primary"
             }
           }
         }}
-        href={`mailto:${companyEmail}`}
+        href={`mailto:${companyEmail}@${companyEmailEnding}`}
       >
         {companyEmail}
+        <span sx={{ color: "primary", fontWeight: "heading" }}>@</span>
+        {companyEmailEnding}
       </a>
     </section>
   );
