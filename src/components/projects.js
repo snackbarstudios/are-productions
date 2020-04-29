@@ -41,14 +41,15 @@ const Projects = () => {
     <section
       id={datoCmsVideoSection.slug}
       sx={{
-        my: [3, 5, null]
+        pt: [5, 5, null]
       }}
     >
       <Styled.h2
         sx={{
           textAlign: "center",
           textTransform: "uppercase",
-          marginBottom: "32px"
+          marginBottom: "32px",
+          my: 2
         }}
       >
         {datoCmsVideoSection.sectionTitle}
