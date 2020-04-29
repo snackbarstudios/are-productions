@@ -23,7 +23,7 @@ const AboutSection = () => {
     <section
       id={slug}
       sx={{
-        my: [3, 5, null],
+        pt: [4, 5, null],
         display: "flex",
         flexDirection: ["column", "row", null]
       }}
